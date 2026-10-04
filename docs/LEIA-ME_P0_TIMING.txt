@@ -1,0 +1,12 @@
+RAPOSO V3.85 R6 - P0 TIMING :58 -> :00
+
+Alterado: demo_executor_v385_r6.py
+
+- preserva entrada M1 em :57-:59
+- interpola relogio do broker entre pacotes
+- reduz consultas SQLite na janela critica
+- nao permite clique tardio apos :00
+- nao altera setups, score, ranking, direcao, stake ou M1
+- py_compile: OK
+
+O database is locked permanece um P0 separado.

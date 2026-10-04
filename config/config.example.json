@@ -1,0 +1,294 @@
+{
+  "url": "https://familyconsist.com.br",
+  "asset_id": "76",
+  "demo_stake": 10.0,
+  "gale_multiplier": 1.0,
+  "max_signal_delay_seconds": 20,
+  "demo_only": true,
+  "execute_orders": true,
+  "source_url": "https://familyconsist.com.br",
+  "broker_url": "https://trade.bull-ex.com/traderoom",
+  "canvas_dry_run": false,
+  "canvas_profile": {
+    "reference_width": 681,
+    "reference_height": 611,
+    "invest_field_center": [
+      620,
+      93
+    ],
+    "up_button_center": [
+      629,
+      277
+    ],
+    "down_button_center": [
+      629,
+      326
+    ],
+    "expiry_field_center": [
+      620,
+      131
+    ]
+  },
+  "demo_single_test": {
+    "enabled": true,
+    "stake": 10.0,
+    "require_exact_confirmation": "DEMO 10",
+    "single_order_only": true
+  },
+  "auto_demo": {
+    "enabled": true,
+    "arm_phrase": "DEMO AUTOMATICO",
+    "max_orders_per_session": 0,
+    "set_amount_each_order": false,
+    "require_min_stake": 10.0,
+    "require_expiry_1m": true,
+    "require_amount_10": true,
+    "set_expiry_on_startup": true,
+    "entry_pre_boundary_window": 1.0,
+    "entry_arm_second": 57.0,
+    "entry_transition_timeout_seconds": 4.0,
+    "entry_send_second": 0,
+    "entry_open_tolerance_seconds": 1.0,
+    "entry_target_second": 0.01,
+    "entry_max_second": 0.05,
+    "feed_stale_seconds": 5.0,
+    "immediate_max_second": 1,
+    "immediate_dispatch_max_age_seconds": 1.0
+  },
+  "version": "3.86",
+  "revision": "R12",
+  "build_revision": "V3.86 - R12",
+  "history_gate": {
+    "enabled": false,
+    "k_neighbors": 25,
+    "min_samples": 12,
+    "min_win_gale_rate": 0.75,
+    "same_c1_direction_only": true,
+    "context_candles": 5
+  },
+  "doji": {
+    "enabled_as_filter": false,
+    "body_max_ratio": 0.1,
+    "dominant_wick_min_ratio": 0.6,
+    "opposite_wick_max_ratio": 0.2
+  },
+  "risk": {
+    "stop_after_real_loss_gale": 0
+  },
+  "strategy_timeframe_seconds": 60,
+  "score_engine": {
+    "enabled": true,
+    "execute_min_score": 5.0,
+    "shadow_all_signals": true,
+    "daily_candle_rank": {
+      "enabled": false,
+      "share_vs_others": 0.3,
+      "minimum_operations": 8
+    },
+    "setups": {
+      "double_pullback": 3.0,
+      "didi": 3.0
+    },
+    "weights": {
+      "m5_sma_trend": 2.0,
+      "adx_di": 1.0,
+      "trix": 1.0,
+      "stochastic": 0.5,
+      "atr": 1.0,
+      "bollinger": 1.0,
+      "price_action": 1.0,
+      "history": 2.0
+    },
+    "family_caps": {
+      "setup": 3.0,
+      "trend": 2.0,
+      "strength": 1.0,
+      "momentum": 1.5,
+      "volatility": 2.0,
+      "price_action": 1.0,
+      "history": 2.0
+    },
+    "daily_setup_block": {
+      "enabled": false,
+      "minimum_operations": 8,
+      "share_vs_others": 0.3
+    },
+    "historical_priority": {}
+  },
+  "execution_mode": "strategy_engine",
+  "strategy_engine": {
+    "enabled": true,
+    "min_score": 5.0,
+    "no_gale": true,
+    "one_order_per_candle": true,
+    "historical_priority": {
+      "DUPLO_PULLBACK": 1.0,
+      "DIDI": 0.0
+    }
+  },
+  "adaptive_position": {
+    "enabled": true,
+    "min_samples_per_position": 12,
+    "recent_window": 30,
+    "prior_wins": 2.0,
+    "prior_losses": 2.0,
+    "min_win_rate": 0.52,
+    "min_confidence_lower": 0.4,
+    "max_active_positions": 3,
+    "fallback_new_positions": [
+      2,
+      3
+    ]
+  },
+  "experimental_modules": {
+    "enabled": true,
+    "veto_opposite": false,
+    "confirmation_bonus": 0.5,
+    "CANDLE_FLOW": {
+      "enabled": true,
+      "min_score": 5.0,
+      "min_confirmations": 4,
+      "rsi_call": 52.0,
+      "rsi_put": 48.0,
+      "min_candle_force": 0.55,
+      "volatility_min_ratio": 0.65,
+      "volatility_max_ratio": 1.8,
+      "min_payout": 0.7,
+      "payout_fallback": 0.88
+    },
+    "REVZ": {
+      "enabled": true,
+      "min_score": 5.0,
+      "lookback": 120,
+      "z_threshold": 2.0
+    },
+    "SR_NIVEL": {
+      "enabled": true,
+      "min_score": 5.0,
+      "lookback": 60,
+      "atr_tolerance": 0.25,
+      "min_touches": 2
+    }
+  },
+  "drive_sync": {
+    "enabled": true,
+    "folder": "L:\\Bullex_Robo\\Raposo_Data\\database",
+    "interval_seconds": 3600
+  },
+  "auto_update": {
+    "enabled": false,
+    "check_seconds": 10,
+    "apply_when_idle": true,
+    "bootstrap_before_browser": false,
+    "require_contract": true,
+    "rollback_timeout_seconds": 90
+  },
+  "run_mode": "LOSS_SHIFTS",
+  "loss_control": {
+    "enabled": true,
+    "timezone": "America/Sao_Paulo",
+    "shifts": {
+      "T1": {
+        "mode": "LIMIT",
+        "limit": 2
+      },
+      "T2": {
+        "mode": "LIMIT",
+        "limit": 2
+      },
+      "T3": {
+        "mode": "LIMIT",
+        "limit": 2
+      },
+      "T4": {
+        "mode": "LIMIT",
+        "limit": 2
+      },
+      "T5": {
+        "mode": "LIMIT",
+        "limit": 2
+      },
+      "T6": {
+        "mode": "LIMIT",
+        "limit": 2
+      },
+      "T7": {
+        "mode": "LIMIT",
+        "limit": 2
+      },
+      "T8": {
+        "mode": "LIMIT",
+        "limit": 2
+      }
+    },
+    "shift_scheme": "8x3h",
+    "count_from_shift_start": true,
+    "dated_overrides": {
+      "2026-10-03": {
+        "T8": {
+          "mode": "FREE",
+          "limit": null
+        }
+      }
+    }
+  },
+  "login_email": "",
+  "mobile_control": {
+    "enabled": false,
+    "port": 8765,
+    "pin": ""
+  },
+  "expiry_minutes": 1,
+  "execution_device": "DESKTOP",
+  "app_name": "Raposo Bot",
+  "ui": {
+    "show_asset_name": true,
+    "show_timeframe_expiry_separately": true,
+    "minimize_label": "â†“",
+    "pause_label": "RETOMAR",
+    "show_synced_countdown": true,
+    "setup_neon_cyan": true,
+    "countdown_clock_fallback": true
+  },
+  "app_layout": {
+    "drive_root": "L:\\Bullex_Robo",
+    "app_new": "APP_NEW",
+    "app_old": "APP_OLD",
+    "updates": "Updates",
+    "local_root": "Bullex_Robo"
+  },
+  "start_paused": true,
+  "voice_alerts": {
+    "enabled": false,
+    "mode": "summary",
+    "cooldown_seconds": 3.0
+  },
+  "risk_return": {
+    "enabled": true,
+    "daily_net_loss_minor": 4000,
+    "currency": "USD",
+    "single_open_order": true,
+    "profitable_setup_required": true,
+    "setup_lookback": 100,
+    "minimum_setup_operations": 1,
+    "activated_at": "2026-10-03T11:22:36.679133-03:00",
+    "validation_mode": "DEMO",
+    "replace_legacy_gates": true,
+    "adaptive_selection_only": true
+  },
+  "estrategy_tg": {
+    "enabled": true,
+    "mode": "NEXT_M1_OPENING_ADAPTATION",
+    "window": 20,
+    "tolerance_factor": 0.2,
+    "minimum_open_distance": 1.0,
+    "bootstrap_enabled": true,
+    "bootstrap_operations": 10
+  },
+  "multi_setup_demo": {
+    "enabled": true,
+    "max_orders": 2,
+    "same_asset_same_candle": true,
+    "allow_opposite": true
+  }
+}

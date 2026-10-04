@@ -1,0 +1,17 @@
+RAPOSO/BULLEX V3.84 - R5
+
+Objetivo: corrigir regressao recorrente de localizacao dos botoes ACIMA/ABAIXO sem alterar estrategia, score, timing :58, WIN/LOSS, CDP/feed, pausa, overlay, single-instance ou updater.
+
+Mudancas:
+- configuracao persistente dos botoes em G:\Meu Drive\Bullex_Robo\Dados\config_execucao.json
+- reaproveitamento da geometria normalizada entre atualizacoes
+- validacao pre-arm dos dois botoes antes de liberar ordens
+- fallback de deteccao visual/pixel quando cache/DOM falhar
+- bloqueio explicito se ACIMA/ABAIXO nao forem validados
+
+Protocolo de regressao executado:
+- R5 criada como copia da R4
+- somente demo_executor_v384.py e main_v384_massa_v4.py alterados
+- compilacao Python OK
+- imports principais preservados
+- nenhuma alteracao em realtime_analyzer, score_engine, ui_overlay, bullex_live_capture, updater, config, banco ou credenciais

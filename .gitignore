@@ -1,0 +1,16 @@
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.env
+.env.*
+credentials.dat
+config/config.json
+config/config_v386_release.json
+config/asset_labels.corrupt.json
+backups/
+reports/
+*.db
+*.db-*
+*.sqlite*
+*.log

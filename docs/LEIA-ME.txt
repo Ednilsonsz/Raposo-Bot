@@ -1,0 +1,10 @@
+RAPOSO V3.85 R8
+
+Correcoes desta revisao:
+1. PAUSAR/RETOMAR usa o estado real p.paused recebido do Python. RETOMAR envia RESUME; PAUSAR envia PAUSE.
+2. Overlay/Dashboard nao referencia mais o.cycle_start ou d.cycle_start; evita snapshot fallback em schemas atuais.
+3. ATIVO BLOQUEADO removido como estado do Dashboard. O estado visual passa a OPERANDO/PAUSADO.
+4. Mantida a regra operacional da R7: gate redundante de ativo nao impede tentativa de clique; confirmacao fisica continua sendo localizar/clicar ACIMA ou ABAIXO.
+5. Identificacao visual: V3.85 · R8.
+
+Nao alterado: setups, score, Adaptive, confluencia, ROI, direcao, stake, expiracao M1 ou timing.

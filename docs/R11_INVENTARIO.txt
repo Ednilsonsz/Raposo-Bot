@@ -1,0 +1,588 @@
+================================================================================
+INVENTÁRIO RAPOSO 3.86 R11
+================================================================================
+
+Data do inventário: 2026-09-26 19:01:26
+Diretório analisado: L:\Bullex_Robo\APP_NEW\Raposo_3.86_R11
+Modo: SOMENTE LEITURA
+
+================================================================================
+1. RESUMO
+================================================================================
+
+Pastas encontradas : 18
+Arquivos encontrados: 328
+
+CONFIG           13 arquivos   49.16 KB
+DATABASE          2 arquivos   8.73 GB
+LOG               3 arquivos   10.98 MB
+OUTROS          178 arquivos   20.46 MB
+PYTHON          120 arquivos   2.58 MB
+SCRIPT            5 arquivos   8.21 KB
+TEXT              7 arquivos   4.62 KB
+
+================================================================================
+2. ESTRUTURA DE PASTAS
+================================================================================
+
+Raposo_3.86_R11\
+    __pycache__\
+    BACKUP_CORRECAO_DASHBOARD_20260922_204016\
+        mobile_app\
+    BACKUP_DELETE_EXECUTED_20260925_130050\
+    BACKUP_FILTRO_RESULTADO_HISTORICO_20260922_212515\
+    BACKUP_P0_DIDI_TIMING_20260923_225759\
+    BACKUP_PRE_DASHBOARD_SEPARADO_20260922_2015\
+        tests\
+    BACKUP_PRE_RESTAURAR_OVERLAY_20260922_222304\
+    BACKUP_REMOVER_LOG_CLASSICO_20260922_212813\
+    BACKUP_SEPARACAO_PENDENTES_HISTORICO_LOG_20260922_211746\
+    data\
+    mobile_app\
+    tests\
+        __pycache__\
+    voz_r11_atualizacao\
+        voz_r11_pkg\
+            tests\
+
+================================================================================
+3. ARQUIVOS
+================================================================================
+
+[OUTROS  ] __pycache__\adaptive_position_v386_r11.cpython-312.pyc | 12.03 KB | 2026-09-26 01:36:55
+[OUTROS  ] __pycache__\adaptive_position_v386_r11.cpython-314.pyc | 12.62 KB | 2026-09-22 19:44:40
+[OUTROS  ] __pycache__\asset_catalog.cpython-312.pyc | 4.91 KB | 2026-09-25 21:01:09
+[OUTROS  ] __pycache__\asset_catalog.cpython-314.pyc | 5.00 KB | 2026-09-23 09:08:33
+[OUTROS  ] __pycache__\BACKUP_broker_results_PRE_PENDING_RECOVERY_20260918.cpython-314.pyc | 31.37 KB | 2026-09-22 15:30:02
+[OUTROS  ] __pycache__\BACKUP_broker_results_r6_PRE_STABLE_LINK_20260917.cpython-314.pyc | 31.36 KB | 2026-09-22 15:30:02
+[OUTROS  ] __pycache__\BACKUP_bullex_live_capture_PRE_GRAPH_ACTIVE_FIX_20260917.cpython-314.pyc | 24.55 KB | 2026-09-22 15:30:03
+[OUTROS  ] __pycache__\BACKUP_bullex_live_capture_PRE_INIT_STATE_FIX_20260917.cpython-314.pyc | 23.58 KB | 2026-09-22 15:30:03
+[OUTROS  ] __pycache__\BACKUP_bullex_live_capture_PRE_POLL_ORDER_FIX_20260917.cpython-314.pyc | 24.22 KB | 2026-09-22 15:30:03
+[OUTROS  ] __pycache__\BACKUP_bullex_live_capture_PRE_STABLE_ASSET_20260917.cpython-314.pyc | 21.37 KB | 2026-09-22 15:30:03
+[OUTROS  ] __pycache__\BACKUP_demo_executor_PRE_ASSET_GATE_FIX_20260917.cpython-314.pyc | 62.45 KB | 2026-09-22 15:30:03
+[OUTROS  ] __pycache__\BACKUP_demo_executor_PRE_AUTO_EXPIRY_DASHBOARD_FIX_20260917.cpython-314.pyc | 63.91 KB | 2026-09-22 15:30:03
+[OUTROS  ] __pycache__\BACKUP_demo_executor_PRE_BUTTON_LOCATOR_FIX_20260918.cpython-314.pyc | 63.24 KB | 2026-09-22 15:30:03
+[OUTROS  ] __pycache__\BACKUP_demo_executor_PRE_BUTTON_RESILIENCE_20260918.cpython-314.pyc | 61.42 KB | 2026-09-22 15:30:03
+[OUTROS  ] __pycache__\BACKUP_demo_executor_PRE_RESTORE_LAST_WORKING_20260917.cpython-314.pyc | 62.46 KB | 2026-09-22 15:30:04
+[OUTROS  ] __pycache__\BACKUP_demo_executor_PRE_STABLE_EXEC_20260917.cpython-314.pyc | 62.45 KB | 2026-09-22 15:30:04
+[OUTROS  ] __pycache__\BACKUP_main_v384_r6_PRE_AUTO_EXPIRY_FIX_20260917.cpython-314.pyc | 44.50 KB | 2026-09-22 15:30:04
+[OUTROS  ] __pycache__\BACKUP_main_v384_r6_PRE_STABLE_EXEC_20260917.cpython-314.pyc | 44.50 KB | 2026-09-22 15:30:04
+[OUTROS  ] __pycache__\broker_day_r11.cpython-312.pyc | 1.36 KB | 2026-09-25 21:01:04
+[OUTROS  ] __pycache__\broker_day_r11.cpython-314.pyc | 1.34 KB | 2026-09-22 15:30:04
+[OUTROS  ] __pycache__\broker_history_r11.cpython-312.pyc | 13.75 KB | 2026-09-24 13:12:38
+[OUTROS  ] __pycache__\broker_history_r11.cpython-314.pyc | 16.32 KB | 2026-09-26 10:23:54
+[OUTROS  ] __pycache__\BROKER_RESULTS_BACKUP_ANTES_SQLITE_LOCK_2026-09-17.cpython-314.pyc | 30.54 KB | 2026-09-22 15:30:04
+[OUTROS  ] __pycache__\broker_results_r11.cpython-312.pyc | 32.30 KB | 2026-09-26 01:03:35
+[OUTROS  ] __pycache__\broker_results_r11.cpython-314.pyc | 34.61 KB | 2026-09-26 14:02:02
+[OUTROS  ] __pycache__\broker_results_r6_BACKUP_PRE_P0_20260917.cpython-314.pyc | 31.35 KB | 2026-09-22 15:30:04
+[OUTROS  ] __pycache__\browser.cpython-312.pyc | 1.30 KB | 2026-09-26 01:37:03
+[OUTROS  ] __pycache__\browser.cpython-314.pyc | 1.55 KB | 2026-09-26 10:05:58
+[OUTROS  ] __pycache__\bullex_controls_reader.cpython-312.pyc | 19.38 KB | 2026-09-26 01:54:34
+[OUTROS  ] __pycache__\bullex_controls_reader.cpython-314.pyc | 21.33 KB | 2026-09-26 00:48:07
+[OUTROS  ] __pycache__\bullex_controls_reader_PATCH_STAGING.cpython-314.pyc | 15.73 KB | 2026-09-22 15:30:04
+[OUTROS  ] __pycache__\bullex_live_capture 180926-2243.cpython-314.pyc | 25.37 KB | 2026-09-22 15:30:04
+[OUTROS  ] __pycache__\bullex_live_capture 180926-2315.cpython-314.pyc | 24.24 KB | 2026-09-22 15:30:04
+[OUTROS  ] __pycache__\bullex_live_capture 2009-1949.cpython-314.pyc | 27.04 KB | 2026-09-22 15:30:04
+[OUTROS  ] __pycache__\bullex_live_capture.cpython-312.pyc | 26.92 KB | 2026-09-26 01:54:32
+[OUTROS  ] __pycache__\bullex_live_capture.cpython-314.pyc | 28.74 KB | 2026-09-23 09:08:33
+[OUTROS  ] __pycache__\bullex_live_capture_BACKUP_PRE_P0_20260917.cpython-314.pyc | 21.08 KB | 2026-09-22 15:30:04
+[OUTROS  ] __pycache__\bullex_live_capture_R6_BEFORE_GRAPH_ASSET_FIX.cpython-314.pyc | 24.29 KB | 2026-09-22 15:30:04
+[OUTROS  ] __pycache__\credential_store.cpython-312.pyc | 4.81 KB | 2026-09-26 01:37:09
+[OUTROS  ] __pycache__\credential_store.cpython-314.pyc | 5.51 KB | 2026-09-22 15:30:04
+[OUTROS  ] __pycache__\database (1).cpython-314.pyc | 884.00 B | 2026-09-22 15:30:04
+[OUTROS  ] __pycache__\database.cpython-312.pyc | 4.37 KB | 2026-09-25 00:14:18
+[OUTROS  ] __pycache__\database.cpython-314.pyc | 4.52 KB | 2026-09-24 14:03:49
+[OUTROS  ] __pycache__\demo_executor_v384_r6.cpython-314.pyc | 61.42 KB | 2026-09-22 15:30:05
+[OUTROS  ] __pycache__\demo_executor_v384_r6_BACKUP_PRE_M1_SYNC_20260917.cpython-314.pyc | 61.41 KB | 2026-09-22 15:30:04
+[OUTROS  ] __pycache__\demo_executor_v384_r6_GATE_FIX.cpython-314.pyc | 60.81 KB | 2026-09-22 15:30:04
+[OUTROS  ] __pycache__\demo_executor_v386_r11.cpython-312.pyc | 71.20 KB | 2026-09-26 01:54:30
+[OUTROS  ] __pycache__\demo_executor_v386_r11.cpython-314.pyc | 68.11 KB | 2026-09-26 14:02:02
+[OUTROS  ] __pycache__\drive_sync.cpython-312.pyc | 10.08 KB | 2026-09-26 01:37:11
+[OUTROS  ] __pycache__\drive_sync.cpython-314.pyc | 10.88 KB | 2026-09-23 09:08:34
+[OUTROS  ] __pycache__\EXECUTOR_BACKUP_ANTES_LOCALIZADOR_PAR_2026-09-17.cpython-314.pyc | 60.47 KB | 2026-09-22 15:30:05
+[OUTROS  ] __pycache__\launcher_ui.cpython-312.pyc | 15.87 KB | 2026-09-25 16:30:21
+[OUTROS  ] __pycache__\launcher_ui.cpython-314.pyc | 16.24 KB | 2026-09-25 17:53:03
+[OUTROS  ] __pycache__\login_helper.cpython-312.pyc | 2.74 KB | 2026-09-26 01:37:13
+[OUTROS  ] __pycache__\login_helper.cpython-314.pyc | 2.79 KB | 2026-09-22 15:30:05
+[OUTROS  ] __pycache__\MAIN_BACKUP_ANTES_RECUPERACAO_CHROME_2026-09-17.cpython-314.pyc | 43.57 KB | 2026-09-22 15:30:05
+[OUTROS  ] __pycache__\main_v384_r6.cpython-314.pyc | 45.03 KB | 2026-09-22 15:30:05
+[OUTROS  ] __pycache__\main_v384_r6.py bkp.cpython-314.pyc | 40.35 KB | 2026-09-22 15:30:05
+[OUTROS  ] __pycache__\main_v384_r6_BACKUP_PRE_ASSET_LABELS.cpython-314.pyc | 42.02 KB | 2026-09-22 15:30:05
+[OUTROS  ] __pycache__\main_v384_r6_BACKUP_PRE_RESTART_TIMEOUT_FIX.cpython-314.pyc | 41.42 KB | 2026-09-22 15:30:05
+[OUTROS  ] __pycache__\main_v384_r6_PATCH_R6LABEL.cpython-314.pyc | 40.36 KB | 2026-09-22 15:30:05
+[OUTROS  ] __pycache__\main_v384_r6_STABLE_EXEC_WORK.cpython-314.pyc | 44.48 KB | 2026-09-22 15:30:05
+[OUTROS  ] __pycache__\main_v386_r11.cpython-312.pyc | 48.74 KB | 2026-09-26 01:54:27
+[OUTROS  ] __pycache__\main_v386_r11.cpython-314.pyc | 53.49 KB | 2026-09-26 14:02:02
+[OUTROS  ] __pycache__\migrate_cycle_start_once.cpython-314.pyc | 2.17 KB | 2026-09-22 15:30:05
+[OUTROS  ] __pycache__\mobile_server.cpython-312.pyc | 24.73 KB | 2026-09-26 01:37:17
+[OUTROS  ] __pycache__\mobile_server.cpython-314.pyc | 31.05 KB | 2026-09-26 10:57:46
+[OUTROS  ] __pycache__\pause_control_r11.cpython-312.pyc | 1.92 KB | 2026-09-26 01:03:39
+[OUTROS  ] __pycache__\pause_control_r11.cpython-314.pyc | 2.08 KB | 2026-09-26 14:01:49
+[OUTROS  ] __pycache__\r11_restart.cpython-312.pyc | 7.62 KB | 2026-09-26 01:03:29
+[OUTROS  ] __pycache__\r11_restart.cpython-314.pyc | 8.08 KB | 2026-09-26 01:05:09
+[OUTROS  ] __pycache__\realtime_analyzer_v384_r1 (1).cpython-314.pyc | 38.11 KB | 2026-09-22 15:30:06
+[OUTROS  ] __pycache__\realtime_analyzer_v384_r1.cpython-314.pyc | 38.45 KB | 2026-09-22 15:30:06
+[OUTROS  ] __pycache__\realtime_analyzer_v384_r6.cpython-314.pyc | 42.32 KB | 2026-09-22 15:30:06
+[OUTROS  ] __pycache__\realtime_analyzer_v386_r11.cpython-312.pyc | 49.26 KB | 2026-09-26 01:54:29
+[OUTROS  ] __pycache__\realtime_analyzer_v386_r11.cpython-314.pyc | 52.04 KB | 2026-09-26 01:49:56
+[OUTROS  ] __pycache__\score_engine_v384_r1.cpython-314.pyc | 13.34 KB | 2026-09-22 15:30:06
+[OUTROS  ] __pycache__\score_engine_v384_r1_PATCH_READY.cpython-314.pyc | 14.29 KB | 2026-09-22 15:30:06
+[OUTROS  ] __pycache__\score_engine_v384_r1_SETUPS_STAGING.cpython-314.pyc | 17.67 KB | 2026-09-22 15:30:06
+[OUTROS  ] __pycache__\score_engine_v384_r6.cpython-314.pyc | 19.21 KB | 2026-09-22 15:30:06
+[OUTROS  ] __pycache__\score_engine_v386_r11.cpython-312.pyc | 16.65 KB | 2026-09-26 01:36:54
+[OUTROS  ] __pycache__\score_engine_v386_r11.cpython-314.pyc | 19.21 KB | 2026-09-22 19:44:40
+[OUTROS  ] __pycache__\strategy_modules_v386_r11.cpython-312.pyc | 15.17 KB | 2026-09-26 01:36:58
+[OUTROS  ] __pycache__\strategy_modules_v386_r11.cpython-314.pyc | 17.21 KB | 2026-09-22 19:44:40
+[OUTROS  ] __pycache__\UI_ATUAL_BACKUP_2026-09-17_1052.cpython-314.pyc | 39.46 KB | 2026-09-22 15:30:06
+[OUTROS  ] __pycache__\UI_BACKUP_ANTES_CORRECAO_PAINEL_ATIVOS_2026-09-17.cpython-314.pyc | 57.23 KB | 2026-09-22 15:30:06
+[OUTROS  ] __pycache__\UI_BACKUP_PRE_DASHBOARD_TELA_CHEIA_2026-09-17.cpython-314.pyc | 45.61 KB | 2026-09-22 15:30:06
+[OUTROS  ] __pycache__\UI_BACKUP_PRE_DASHBOARD_TOTAL_FIX_2026-09-17.cpython-314.pyc | 58.34 KB | 2026-09-22 15:30:06
+[OUTROS  ] __pycache__\UI_BACKUP_PRE_RESTART_COMMAND_FIX.cpython-314.pyc | 57.10 KB | 2026-09-22 15:30:06
+[OUTROS  ] __pycache__\ui_overlay_massa_v385.cpython-314.pyc | 69.55 KB | 2026-09-22 15:30:07
+[OUTROS  ] __pycache__\ui_overlay_massa_v386_r11.cpython-312.pyc | 43.87 KB | 2026-09-25 21:49:27
+[OUTROS  ] __pycache__\ui_overlay_massa_v386_r11.cpython-314.pyc | 47.21 KB | 2026-09-26 18:27:18
+[OUTROS  ] __pycache__\ui_overlay_massa_v4 180926-2244.cpython-314.pyc | 65.95 KB | 2026-09-22 15:30:07
+[OUTROS  ] __pycache__\ui_overlay_massa_v4 2009-1758.cpython-314.pyc | 63.50 KB | 2026-09-22 15:30:07
+[OUTROS  ] __pycache__\ui_overlay_massa_v4.cpython-314.pyc | 66.37 KB | 2026-09-22 15:30:07
+[OUTROS  ] __pycache__\ui_overlay_massa_v4_BACKUP_1132_PRE_M1_SYNC.cpython-314.pyc | 39.47 KB | 2026-09-22 15:30:07
+[OUTROS  ] __pycache__\ui_overlay_massa_v4_RANKING_CICLO.cpython-314.pyc | 60.67 KB | 2026-09-22 15:30:07
+[OUTROS  ] __pycache__\updater.cpython-312.pyc | 7.60 KB | 2026-09-26 01:37:14
+[OUTROS  ] __pycache__\updater.cpython-314.pyc | 8.23 KB | 2026-09-22 15:30:07
+[OUTROS  ] __pycache__\voice_announcer_r11.cpython-314.pyc | 7.84 KB | 2026-09-26 18:31:17
+[PYTHON  ] _diag_history_totals.py | 1.33 KB | 2026-09-23 09:53:11
+[TEXT    ] ACESSO_CELULAR.txt | 101.00 B | 2026-09-26 18:32:28
+[PYTHON  ] adaptive_position_v386_r11.py | 7.67 KB | 2026-09-21 15:40:21
+[PYTHON  ] asset_catalog.py | 3.50 KB | 2026-09-20 20:38:52
+[CONFIG  ] asset_labels.json | 291.00 B | 2026-09-26 18:45:29
+[PYTHON  ] audit_candle_relation.py | 1.17 KB | 2026-09-26 18:44:07
+[PYTHON  ] audit_candles.py | 790.00 B | 2026-09-26 18:43:29
+[PYTHON  ] BACKUP_broker_results_PRE_PENDING_RECOVERY_20260918.py | 21.43 KB | 2026-09-18 04:33:58
+[PYTHON  ] BACKUP_broker_results_r6_PRE_STABLE_LINK_20260917.py | 21.43 KB | 2026-09-17 13:50:24
+[PYTHON  ] BACKUP_bullex_live_capture_PRE_GRAPH_ACTIVE_FIX_20260917.py | 20.08 KB | 2026-09-17 17:52:22
+[PYTHON  ] BACKUP_bullex_live_capture_PRE_INIT_STATE_FIX_20260917.py | 18.55 KB | 2026-09-17 14:37:50
+[PYTHON  ] BACKUP_bullex_live_capture_PRE_POLL_ORDER_FIX_20260917.py | 19.27 KB | 2026-09-17 14:54:46
+[PYTHON  ] BACKUP_bullex_live_capture_PRE_STABLE_ASSET_20260917.py | 16.29 KB | 2026-09-17 13:50:18
+[PYTHON  ] BACKUP_CORRECAO_DASHBOARD_20260922_204016\main_v386_r11.py | 40.29 KB | 2026-09-22 20:15:08
+[PYTHON  ] BACKUP_CORRECAO_DASHBOARD_20260922_204016\mobile_server.py | 11.22 KB | 2026-09-22 20:15:08
+[PYTHON  ] BACKUP_CORRECAO_DASHBOARD_20260922_204016\ui_overlay_massa_v386_r11.py | 33.23 KB | 2026-09-22 20:15:08
+[DATABASE] BACKUP_DELETE_EXECUTED_20260925_130050\candles.db | 4.13 GB | 2026-09-25 12:59:21
+[OUTROS  ] BACKUP_DELETE_EXECUTED_20260925_130050\candles.db-shm | 32.00 KB | 2026-09-25 12:49:36
+[OUTROS  ] BACKUP_DELETE_EXECUTED_20260925_130050\candles.db-wal | 7.88 MB | 2026-09-25 12:59:22
+[PYTHON  ] BACKUP_demo_executor_PRE_ASSET_GATE_FIX_20260917.py | 45.93 KB | 2026-09-17 14:28:50
+[PYTHON  ] BACKUP_demo_executor_PRE_AUTO_EXPIRY_DASHBOARD_FIX_20260917.py | 47.59 KB | 2026-09-17 18:38:58
+[PYTHON  ] BACKUP_demo_executor_PRE_BUTTON_LOCATOR_FIX_20260918.py | 47.86 KB | 2026-09-18 05:32:40
+[PYTHON  ] BACKUP_demo_executor_PRE_BUTTON_RESILIENCE_20260918.py | 45.53 KB | 2026-09-18 04:33:52
+[PYTHON  ] BACKUP_demo_executor_PRE_RESTORE_LAST_WORKING_20260917.py | 45.93 KB | 2026-09-17 15:11:04
+[PYTHON  ] BACKUP_demo_executor_PRE_STABLE_EXEC_20260917.py | 45.93 KB | 2026-09-17 13:50:46
+[OUTROS  ] BACKUP_FILTRO_RESULTADO_HISTORICO_20260922_212515\dashboard.html | 7.93 KB | 2026-09-22 21:19:45
+[PYTHON  ] BACKUP_FILTRO_RESULTADO_HISTORICO_20260922_212515\mobile_server.py | 11.57 KB | 2026-09-22 21:18:50
+[PYTHON  ] BACKUP_FILTRO_RESULTADO_HISTORICO_20260922_212515\ui_overlay_massa_v386_r11.py | 33.54 KB | 2026-09-22 21:18:19
+[PYTHON  ] BACKUP_main_v384_r6_PRE_AUTO_EXPIRY_FIX_20260917.py | 33.44 KB | 2026-09-17 13:06:52
+[PYTHON  ] BACKUP_main_v384_r6_PRE_STABLE_EXEC_20260917.py | 33.44 KB | 2026-09-17 13:50:52
+[PYTHON  ] BACKUP_P0_DIDI_TIMING_20260923_225759\broker_results_r11.py | 23.38 KB | 2026-09-23 09:07:12
+[PYTHON  ] BACKUP_P0_DIDI_TIMING_20260923_225759\demo_executor_v386_r11.py | 48.70 KB | 2026-09-22 15:43:11
+[PYTHON  ] BACKUP_P0_DIDI_TIMING_20260923_225759\realtime_analyzer_v386_r11.py | 36.57 KB | 2026-09-23 08:38:20
+[CONFIG  ] BACKUP_PRE_DASHBOARD_SEPARADO_20260922_2015\config.json | 4.72 KB | 2026-09-22 19:56:21
+[CONFIG  ] BACKUP_PRE_DASHBOARD_SEPARADO_20260922_2015\config_v386_release.json | 4.50 KB | 2026-09-22 15:25:24
+[PYTHON  ] BACKUP_PRE_DASHBOARD_SEPARADO_20260922_2015\main_v386_r11.py | 40.20 KB | 2026-09-22 15:53:58
+[PYTHON  ] BACKUP_PRE_DASHBOARD_SEPARADO_20260922_2015\mobile_server.py | 9.38 KB | 2026-09-22 15:52:01
+[PYTHON  ] BACKUP_PRE_DASHBOARD_SEPARADO_20260922_2015\tests\browser_smoke_v386_r11.py | 5.80 KB | 2026-09-22 20:04:26
+[PYTHON  ] BACKUP_PRE_DASHBOARD_SEPARADO_20260922_2015\tests\test_v386_r11_control_ui.py | 4.86 KB | 2026-09-22 20:11:37
+[PYTHON  ] BACKUP_PRE_DASHBOARD_SEPARADO_20260922_2015\ui_overlay_massa_v386_r11.py | 32.98 KB | 2026-09-22 20:11:37
+[PYTHON  ] BACKUP_PRE_RESTAURAR_OVERLAY_20260922_222304\ui_overlay_massa_v386_r11.py | 33.98 KB | 2026-09-22 21:36:08
+[OUTROS  ] BACKUP_REMOVER_LOG_CLASSICO_20260922_212813\dashboard.html | 7.93 KB | 2026-09-22 21:19:45
+[PYTHON  ] BACKUP_REMOVER_LOG_CLASSICO_20260922_212813\mobile_server.py | 11.73 KB | 2026-09-22 21:26:01
+[PYTHON  ] BACKUP_REMOVER_LOG_CLASSICO_20260922_212813\ui_overlay_massa_v386_r11.py | 33.58 KB | 2026-09-22 21:25:24
+[OUTROS  ] BACKUP_SEPARACAO_PENDENTES_HISTORICO_LOG_20260922_211746\dashboard.html | 7.61 KB | 2026-09-22 21:01:51
+[PYTHON  ] BACKUP_SEPARACAO_PENDENTES_HISTORICO_LOG_20260922_211746\mobile_server.py | 11.41 KB | 2026-09-22 20:51:16
+[PYTHON  ] BACKUP_SEPARACAO_PENDENTES_HISTORICO_LOG_20260922_211746\ui_overlay_massa_v386_r11.py | 33.43 KB | 2026-09-22 21:01:37
+[TEXT    ] BASE_R6.txt | 218.00 B | 2026-09-14 20:32:26
+[PYTHON  ] broker_day_r11.py | 595.00 B | 2026-09-16 12:10:34
+[PYTHON  ] broker_history_r11.py | 12.96 KB | 2026-09-26 10:23:38
+[OUTROS  ] broker_history_r11.py.bak_before_old_history_recovery_20260923 | 8.26 KB | 2026-09-22 15:25:24
+[OUTROS  ] broker_history_r11.py.bak_before_reconcile_fix_20260924 | 8.43 KB | 2026-09-23 09:50:15
+[OUTROS  ] broker_history_transport_r11.js | 3.64 KB | 2026-09-25 19:37:46
+[PYTHON  ] BROKER_RESULTS_BACKUP_ANTES_SQLITE_LOCK_2026-09-17.py | 20.99 KB | 2026-09-17 12:08:16
+[PYTHON  ] broker_results_r11.py | 25.18 KB | 2026-09-26 13:59:25
+[OUTROS  ] broker_results_r11.py.bak_before_lock_fix_20260924 | 24.05 KB | 2026-09-23 22:59:46
+[OUTROS  ] broker_results_r11.py.bak_before_voice_button_20260926_135924 | 24.60 KB | 2026-09-26 00:41:38
+[PYTHON  ] broker_results_r6_BACKUP_PRE_P0_20260917.py | 21.43 KB | 2026-09-17 13:33:38
+[PYTHON  ] browser.py | 1012.00 B | 2026-09-26 10:03:28
+[OUTROS  ] browser.py.bak_20260925_1350 | 527.00 B | 2026-09-25 13:50:05
+[SCRIPT  ] bullex_controls_ocr.ps1 | 1.71 KB | 2026-09-16 06:54:56
+[PYTHON  ] bullex_controls_reader.py | 13.17 KB | 2026-09-26 00:47:55
+[PYTHON  ] bullex_controls_reader_PATCH_STAGING.py | 8.70 KB | 2026-09-16 16:29:52
+[LOG     ] bullex_dev_error_local.log | 30.10 KB | 2026-09-26 01:05:19
+[LOG     ] bullex_dev_runtime_local.log | 10.93 MB | 2026-09-26 19:01:24
+[PYTHON  ] bullex_live_capture 180926-2243.py | 19.67 KB | 2026-09-18 18:44:42
+[PYTHON  ] bullex_live_capture 180926-2315.py | 19.37 KB | 2026-09-18 19:43:42
+[PYTHON  ] bullex_live_capture 2009-1949.py | 22.97 KB | 2026-09-19 15:31:46
+[PYTHON  ] bullex_live_capture.py | 25.21 KB | 2026-09-23 09:07:12
+[PYTHON  ] bullex_live_capture_BACKUP_PRE_P0_20260917.py | 16.05 KB | 2026-09-17 13:33:14
+[PYTHON  ] bullex_live_capture_R6_BEFORE_GRAPH_ASSET_FIX.py | 19.83 KB | 2026-09-17 17:52:38
+[CONFIG  ] config (1).json | 3.67 KB | 2026-09-18 12:02:00
+[CONFIG  ] config.json | 4.72 KB | 2026-09-26 18:32:02
+[OUTROS  ] config.json.bak_before_turn_loss_stop_20260924 | 4.72 KB | 2026-09-24 14:28:55
+[OUTROS  ] config.json.bak_before_voice_button_20260926_135924 | 4.73 KB | 2026-09-26 10:57:46
+[CONFIG  ] config_v384.json | 3.52 KB | 2026-09-14 16:38:58
+[CONFIG  ] config_v384_release.json | 3.50 KB | 2026-09-20 20:01:10
+[CONFIG  ] config_v385_release.json | 4.45 KB | 2026-09-21 15:41:06
+[CONFIG  ] config_v386_release.json | 4.50 KB | 2026-09-23 08:38:21
+[OUTROS  ] config_v386_release.json.bak_before_account_gate_20260925 | 4.69 KB | 2026-09-24 15:04:13
+[OUTROS  ] config_v386_release.json.bak_before_turn_loss_stop_20260924 | 4.50 KB | 2026-09-23 08:38:21
+[OUTROS  ] CORRECAO_LOGS_COR_R1.md | 703.00 B | 2026-09-21 19:38:04
+[PYTHON  ] credential_store.py | 1.90 KB | 2026-09-14 16:38:58
+[OUTROS  ] credentials.dat | 392.00 B | 2026-09-26 18:32:02
+[DATABASE] data\candles.db | 4.59 GB | 2026-09-26 19:00:51
+[OUTROS  ] data\candles.db-shm | 32.00 KB | 2026-09-26 18:32:26
+[OUTROS  ] data\candles.db-wal | 7.87 MB | 2026-09-26 19:01:25
+[PYTHON  ] database (1).py | 344.00 B | 2026-09-14 16:38:58
+[PYTHON  ] database.py | 3.32 KB | 2026-09-24 13:50:30
+[OUTROS  ] database.py.bak_before_candle_flow_invert_20260924 | 2.61 KB | 2026-09-24 13:11:43
+[OUTROS  ] database.py.bak_before_lock_timeout_20260924 | 2.61 KB | 2026-09-23 08:38:20
+[PYTHON  ] demo_executor_v384_r6.py | 45.12 KB | 2026-09-20 20:10:26
+[PYTHON  ] demo_executor_v384_r6_BACKUP_PRE_M1_SYNC_20260917.py | 45.53 KB | 2026-09-17 20:07:28
+[PYTHON  ] demo_executor_v384_r6_GATE_FIX.py | 44.93 KB | 2026-09-16 22:01:08
+[PYTHON  ] demo_executor_v386_r11.py | 52.25 KB | 2026-09-26 13:59:25
+[OUTROS  ] demo_executor_v386_r11.py.bak_before_account_balance_header_20260925_2156 | 55.52 KB | 2026-09-25 21:47:30
+[OUTROS  ] demo_executor_v386_r11.py.bak_before_account_gate_20260925 | 49.88 KB | 2026-09-24 15:05:32
+[OUTROS  ] demo_executor_v386_r11.py.bak_before_candle_absolute_clock_20260926_045337 | 58.10 KB | 2026-09-26 01:53:39
+[OUTROS  ] demo_executor_v386_r11.py.bak_before_candle_flow_invert_20260924 | 48.88 KB | 2026-09-23 22:58:31
+[OUTROS  ] demo_executor_v386_r11.py.bak_before_capture_clock_fix_20260926_044719 | 58.74 KB | 2026-09-26 01:47:20
+[OUTROS  ] demo_executor_v386_r11.py.bak_before_voice_button_20260926_135924 | 51.06 KB | 2026-09-26 10:01:19
+[PYTHON  ] drive_sync.py | 5.48 KB | 2026-09-23 08:38:20
+[PYTHON  ] EXECUTOR_BACKUP_ANTES_LOCALIZADOR_PAR_2026-09-17.py | 44.52 KB | 2026-09-17 12:14:30
+[PYTHON  ] final_setup_voice_patch.py | 1.54 KB | 2026-09-26 18:27:17
+[SCRIPT  ] INICIAR_RAPOSO_V3_85_R6.bat | 217.00 B | 2026-09-21 18:50:24
+[SCRIPT  ] INICIAR_RAPOSO_V3_86_R11.bat | 221.00 B | 2026-09-22 15:25:24
+[PYTHON  ] inventario_r11.py | 8.22 KB | 2026-09-26 18:52:11
+[PYTHON  ] launcher_ui.py | 7.47 KB | 2026-09-25 16:28:34
+[TEXT    ] LEIA-ME.txt | 660.00 B | 2026-09-22 13:36:05
+[TEXT    ] LEIA-ME_P0_TIMING.txt | 356.00 B | 2026-09-22 13:54:38
+[OUTROS  ] LIVE_R11_M1_PAUSED.png | 129.08 KB | 2026-09-22 15:49:25
+[OUTROS  ] LIVE_R11_PAUSED.png | 150.65 KB | 2026-09-22 15:37:08
+[PYTHON  ] login_helper.py | 1.92 KB | 2026-09-14 21:46:56
+[PYTHON  ] MAIN_BACKUP_ANTES_RECUPERACAO_CHROME_2026-09-17.py | 32.79 KB | 2026-09-17 12:02:52
+[PYTHON  ] main_v384_r6.py | 34.15 KB | 2026-09-20 21:18:52
+[PYTHON  ] main_v384_r6.py bkp.py | 29.99 KB | 2026-09-17 06:25:54
+[PYTHON  ] main_v384_r6_BACKUP_PRE_ASSET_LABELS.py | 31.85 KB | 2026-09-17 09:20:36
+[PYTHON  ] main_v384_r6_BACKUP_PRE_RESTART_TIMEOUT_FIX.py | 31.20 KB | 2026-09-17 09:15:10
+[PYTHON  ] main_v384_r6_PATCH_R6LABEL.py | 29.99 KB | 2026-09-17 06:03:54
+[PYTHON  ] main_v384_r6_STABLE_EXEC_WORK.py | 33.44 KB | 2026-09-17 13:50:58
+[PYTHON  ] main_v386_r11.py | 43.11 KB | 2026-09-26 13:59:25
+[OUTROS  ] main_v386_r11.py.bak_before_restore_20260925_2131 | 42.91 KB | 2026-09-25 21:29:08
+[OUTROS  ] main_v386_r11.py.bak_before_turn_loss_stop_20260924 | 43.60 KB | 2026-09-24 15:01:50
+[OUTROS  ] main_v386_r11.py.bak_before_visual_clock_20260926_043537 | 42.55 KB | 2026-09-26 01:35:38
+[OUTROS  ] main_v386_r11.py.bak_before_voice_button_20260926_135924 | 41.65 KB | 2026-09-26 10:10:25
+[OUTROS  ] MERGE_ATIVO_REPORT.md | 8.93 KB | 2026-09-20 20:39:40
+[SCRIPT  ] merge_voice.ps1 | 4.70 KB | 2026-09-26 13:58:48
+[PYTHON  ] migrate_cycle_start_once.py | 1.27 KB | 2026-09-20 20:49:10
+[OUTROS  ] mobile_app\dashboard.html | 14.51 KB | 2026-09-26 11:02:35
+[OUTROS  ] mobile_app\dashboard.html.bak_before_candle_flow_invert_20260924 | 11.43 KB | 2026-09-23 23:28:25
+[OUTROS  ] mobile_app\dashboard.html.bak_before_history_default_20260923 | 11.19 KB | 2026-09-23 11:08:23
+[OUTROS  ] mobile_app\dashboard.html.bak_before_latest_ops_all_states | 9.35 KB | 2026-09-23 09:39:50
+[OUTROS  ] mobile_app\dashboard.html.bak_before_setup_candle_blocks_20260923 | 10.41 KB | 2026-09-23 10:36:10
+[OUTROS  ] mobile_app\dashboard.html.bak_before_setup_candle_colors_20260923 | 9.35 KB | 2026-09-23 09:45:43
+[OUTROS  ] mobile_app\dashboard.html.bak_before_shift_block_20260923 | 11.19 KB | 2026-09-23 11:10:56
+[OUTROS  ] mobile_app\dashboard.html.bak_before_sort_load_resize_20260923 | 11.07 KB | 2026-09-23 10:58:26
+[OUTROS  ] mobile_app\log.html | 2.52 KB | 2026-09-26 10:11:01
+[PYTHON  ] mobile_server.py | 17.51 KB | 2026-09-26 10:55:33
+[OUTROS  ] mobile_server.py.bak_before_setup_candle_only_20260923 | 13.04 KB | 2026-09-23 10:34:07
+[OUTROS  ] mobile_server.py.bak_before_setup_candle_totals_20260923 | 12.96 KB | 2026-09-22 21:37:14
+[OUTROS  ] mobile_server.py.bak_before_shift_totals_20260923 | 12.96 KB | 2026-09-23 10:58:33
+[PYTHON  ] patch_pause_voice.py | 305.00 B | 2026-09-26 14:01:48
+[PYTHON  ] patch_setup_voice.py | 3.08 KB | 2026-09-26 18:26:08
+[TEXT    ] PATCH_V3.84_R5.txt | 869.00 B | 2026-09-14 16:38:58
+[PYTHON  ] patch_voice_target.py | 5.44 KB | 2026-09-26 13:59:24
+[PYTHON  ] patch_voice_tone_simple.py | 958.00 B | 2026-09-26 18:31:17
+[PYTHON  ] pause_control_r11.py | 1.40 KB | 2026-09-26 14:01:48
+[OUTROS  ] pause_control_r11.py.bak_before_voice_button_20260926_135924 | 1.34 KB | 2026-09-16 16:59:44
+[TEXT    ] PROTOCOLO_SUBIDA_VERSAO.txt | 2.45 KB | 2026-09-14 16:38:58
+[PYTHON  ] r11_restart.py | 4.36 KB | 2026-09-26 01:02:32
+[OUTROS  ] README_CATALOGO_ATIVOS.md | 1.92 KB | 2026-09-19 18:15:24
+[OUTROS  ] README_V3.85_DEMO.md | 1.31 KB | 2026-09-21 19:01:10
+[PYTHON  ] realtime_analyzer_v384_r1 (1).py | 28.48 KB | 2026-09-18 13:05:16
+[PYTHON  ] realtime_analyzer_v384_r1.py | 28.07 KB | 2026-09-18 13:06:48
+[PYTHON  ] realtime_analyzer_v384_r6.py | 31.35 KB | 2026-09-21 07:23:30
+[PYTHON  ] realtime_analyzer_v386_r11.py | 39.95 KB | 2026-09-26 01:47:24
+[OUTROS  ] realtime_analyzer_v386_r11.py.bak_before_candle_flow_invert_20260924 | 37.69 KB | 2026-09-23 22:58:31
+[OUTROS  ] realtime_analyzer_v386_r11.py.bak_before_capture_clock_fix_20260926_044719 | 39.80 KB | 2026-09-26 01:47:22
+[OUTROS  ] realtime_analyzer_v386_r11.py.bak_before_visual_clock_20260926_043537 | 39.64 KB | 2026-09-26 01:35:39
+[TEXT    ] requirements.txt | 16.00 B | 2026-09-14 21:47:02
+[CONFIG  ] resume_state_r11.json | 5.22 KB | 2026-09-26 10:57:42
+[CONFIG  ] resume_state_r6.json | 5.15 KB | 2026-09-22 13:43:24
+[PYTHON  ] score_engine_v384_r1.py | 6.12 KB | 2026-09-14 20:31:52
+[PYTHON  ] score_engine_v384_r1_PATCH_READY.py | 6.90 KB | 2026-09-16 07:56:14
+[PYTHON  ] score_engine_v384_r1_SETUPS_STAGING.py | 9.10 KB | 2026-09-16 12:21:04
+[PYTHON  ] score_engine_v384_r6.py | 9.82 KB | 2026-09-17 06:16:50
+[PYTHON  ] score_engine_v386_r11.py | 9.82 KB | 2026-09-17 06:16:50
+[LOG     ] startup_error.log | 30.10 KB | 2026-09-26 01:05:19
+[PYTHON  ] strategy_modules_v386_r11.py | 10.42 KB | 2026-09-21 15:37:42
+[OUTROS  ] tests\__pycache__\test_broker_results_r6.cpython-314.pyc | 41.23 KB | 2026-09-23 09:07:23
+[OUTROS  ] tests\__pycache__\test_didi_immediate_timing_r11.cpython-312.pyc | 12.79 KB | 2026-09-26 01:36:47
+[OUTROS  ] tests\__pycache__\test_didi_immediate_timing_r11.cpython-314.pyc | 13.41 KB | 2026-09-26 00:41:09
+[OUTROS  ] tests\__pycache__\test_drive_sync_r11.cpython-314.pyc | 4.02 KB | 2026-09-23 08:40:00
+[OUTROS  ] tests\__pycache__\test_history_r6.cpython-314.pyc | 10.36 KB | 2026-09-22 15:30:08
+[OUTROS  ] tests\__pycache__\test_restart_r6.cpython-314.pyc | 8.36 KB | 2026-09-22 19:45:50
+[OUTROS  ] tests\__pycache__\test_v385_features.cpython-314.pyc | 10.54 KB | 2026-09-26 00:40:33
+[OUTROS  ] tests\__pycache__\test_v386_r11_control_ui.cpython-312.pyc | 13.25 KB | 2026-09-26 01:37:00
+[OUTROS  ] tests\__pycache__\test_v386_r11_control_ui.cpython-314.pyc | 13.79 KB | 2026-09-26 00:48:06
+[OUTROS  ] tests\__pycache__\test_visual_clock_watchdog_r11.cpython-312.pyc | 4.11 KB | 2026-09-26 01:53:58
+[OUTROS  ] tests\__pycache__\test_voice_announcer_r11.cpython-314.pyc | 3.80 KB | 2026-09-26 14:02:39
+[PYTHON  ] tests\browser_smoke_v386_r11.py | 5.59 KB | 2026-09-22 20:15:08
+[CONFIG  ] tests\execution_baseline_r6.json | 300.00 B | 2026-09-16 11:45:06
+[PYTHON  ] tests\offline_validate_v385.py | 2.24 KB | 2026-09-22 15:26:28
+[PYTHON  ] tests\test_broker_results_r6.py | 15.88 KB | 2026-09-23 09:07:12
+[PYTHON  ] tests\test_didi_immediate_timing_r11.py | 7.62 KB | 2026-09-26 00:40:54
+[PYTHON  ] tests\test_drive_sync_r11.py | 2.02 KB | 2026-09-23 08:39:52
+[PYTHON  ] tests\test_history_r6.py | 4.13 KB | 2026-09-26 10:25:30
+[OUTROS  ] tests\test_history_transport_r6.cjs | 2.93 KB | 2026-09-23 09:07:12
+[PYTHON  ] tests\test_restart_r6.py | 2.92 KB | 2026-09-22 19:45:45
+[PYTHON  ] tests\test_v385_features.py | 6.32 KB | 2026-09-26 00:40:25
+[PYTHON  ] tests\test_v386_r11_control_ui.py | 7.91 KB | 2026-09-26 10:25:14
+[PYTHON  ] tests\test_visual_clock_watchdog_r11.py | 2.78 KB | 2026-09-26 01:53:50
+[PYTHON  ] tests\test_voice_announcer_r11.py | 1.68 KB | 2026-09-26 13:43:14
+[PYTHON  ] UI_ATUAL_BACKUP_2026-09-17_1052.py | 30.14 KB | 2026-09-17 08:44:30
+[PYTHON  ] UI_BACKUP_ANTES_CORRECAO_PAINEL_ATIVOS_2026-09-17.py | 46.01 KB | 2026-09-17 12:00:06
+[PYTHON  ] UI_BACKUP_PRE_DASHBOARD_TELA_CHEIA_2026-09-17.py | 35.74 KB | 2026-09-17 09:06:50
+[PYTHON  ] UI_BACKUP_PRE_DASHBOARD_TOTAL_FIX_2026-09-17.py | 46.94 KB | 2026-09-17 13:17:54
+[PYTHON  ] UI_BACKUP_PRE_RESTART_COMMAND_FIX.py | 45.89 KB | 2026-09-17 09:15:12
+[PYTHON  ] ui_overlay_massa_v385.py | 55.98 KB | 2026-09-22 13:36:05
+[PYTHON  ] ui_overlay_massa_v386_r11.py | 37.69 KB | 2026-09-26 18:26:09
+[OUTROS  ] ui_overlay_massa_v386_r11.py.bak_before_candle_flow_invert_20260924 | 33.63 KB | 2026-09-23 09:53:28
+[OUTROS  ] ui_overlay_massa_v386_r11.py.bak_before_clock_fix_20260925_134746 | 34.64 KB | 2026-09-24 15:05:15
+[OUTROS  ] ui_overlay_massa_v386_r11.py.bak_before_history_pnl_totals_20260923 | 33.58 KB | 2026-09-22 21:25:24
+[OUTROS  ] ui_overlay_massa_v386_r11.py.bak_before_restore_20260925_2131 | 36.02 KB | 2026-09-25 21:27:13
+[OUTROS  ] ui_overlay_massa_v386_r11.py.bak_before_setup_voice_20260926_182609 | 37.19 KB | 2026-09-26 13:59:25
+[OUTROS  ] ui_overlay_massa_v386_r11.py.bak_before_voice_button_20260926_135924 | 36.45 KB | 2026-09-26 10:27:22
+[OUTROS  ] ui_overlay_massa_v386_r11.py.bak_counter_20260925_2001 | 34.43 KB | 2026-09-25 16:28:55
+[PYTHON  ] ui_overlay_massa_v4 180926-2244.py | 54.35 KB | 2026-09-18 18:53:20
+[PYTHON  ] ui_overlay_massa_v4 2009-1758.py | 51.37 KB | 2026-09-18 19:44:10
+[PYTHON  ] ui_overlay_massa_v4.py | 53.17 KB | 2026-09-21 22:50:43
+[PYTHON  ] ui_overlay_massa_v4_BACKUP_1132_PRE_M1_SYNC.py | 30.14 KB | 2026-09-17 20:24:12
+[PYTHON  ] ui_overlay_massa_v4_RANKING_CICLO.py | 48.77 KB | 2026-09-18 05:24:46
+[OUTROS  ] update_healthy.flag | 26.00 B | 2026-09-26 18:32:33
+[PYTHON  ] updater.py | 3.45 KB | 2026-09-18 18:55:18
+[OUTROS  ] V386_R11_INTERFACE_SMOKE.png | 87.57 KB | 2026-09-22 20:04:53
+[OUTROS  ] VALIDACAO_E_DIFF_V3.85.md | 3.06 KB | 2026-09-21 19:38:04
+[OUTROS  ] VERSION | 9.00 B | 2026-09-22 15:25:24
+[PYTHON  ] voice_announcer_r11.py | 4.77 KB | 2026-09-26 18:31:17
+[OUTROS  ] voice_announcer_r11.py.bak_before_setup_voice_20260926_182609 | 3.77 KB | 2026-09-26 13:43:14
+[OUTROS  ] voice_announcer_r11.py.bak_before_setup_voice_tone | 4.25 KB | 2026-09-26 18:26:09
+[OUTROS  ] voz_r11_atualizacao.zip | 40.58 KB | 2026-09-26 13:45:10
+[SCRIPT  ] voz_r11_atualizacao\voz_r11_pkg\APLICAR_VOZ_R11.ps1 | 1.38 KB | 2026-09-26 13:43:14
+[PYTHON  ] voz_r11_atualizacao\voz_r11_pkg\broker_results_r11.py | 24.78 KB | 2026-09-26 13:43:14
+[CONFIG  ] voz_r11_atualizacao\voz_r11_pkg\config.json | 4.62 KB | 2026-09-26 13:43:14
+[PYTHON  ] voz_r11_atualizacao\voz_r11_pkg\demo_executor_v386_r11.py | 58.12 KB | 2026-09-26 13:43:14
+[PYTHON  ] voz_r11_atualizacao\voz_r11_pkg\main_v386_r11.py | 42.70 KB | 2026-09-26 13:43:14
+[PYTHON  ] voz_r11_atualizacao\voz_r11_pkg\tests\test_voice_announcer_r11.py | 1.68 KB | 2026-09-26 13:43:14
+[PYTHON  ] voz_r11_atualizacao\voz_r11_pkg\voice_announcer_r11.py | 3.77 KB | 2026-09-26 13:43:14
+
+================================================================================
+4. ARQUIVOS PYTHON
+================================================================================
+
+_diag_history_totals.py | 1.33 KB
+adaptive_position_v386_r11.py | 7.67 KB
+asset_catalog.py | 3.50 KB
+audit_candle_relation.py | 1.17 KB
+audit_candles.py | 790.00 B
+BACKUP_broker_results_PRE_PENDING_RECOVERY_20260918.py | 21.43 KB
+BACKUP_broker_results_r6_PRE_STABLE_LINK_20260917.py | 21.43 KB
+BACKUP_bullex_live_capture_PRE_GRAPH_ACTIVE_FIX_20260917.py | 20.08 KB
+BACKUP_bullex_live_capture_PRE_INIT_STATE_FIX_20260917.py | 18.55 KB
+BACKUP_bullex_live_capture_PRE_POLL_ORDER_FIX_20260917.py | 19.27 KB
+BACKUP_bullex_live_capture_PRE_STABLE_ASSET_20260917.py | 16.29 KB
+BACKUP_CORRECAO_DASHBOARD_20260922_204016\main_v386_r11.py | 40.29 KB
+BACKUP_CORRECAO_DASHBOARD_20260922_204016\mobile_server.py | 11.22 KB
+BACKUP_CORRECAO_DASHBOARD_20260922_204016\ui_overlay_massa_v386_r11.py | 33.23 KB
+BACKUP_demo_executor_PRE_ASSET_GATE_FIX_20260917.py | 45.93 KB
+BACKUP_demo_executor_PRE_AUTO_EXPIRY_DASHBOARD_FIX_20260917.py | 47.59 KB
+BACKUP_demo_executor_PRE_BUTTON_LOCATOR_FIX_20260918.py | 47.86 KB
+BACKUP_demo_executor_PRE_BUTTON_RESILIENCE_20260918.py | 45.53 KB
+BACKUP_demo_executor_PRE_RESTORE_LAST_WORKING_20260917.py | 45.93 KB
+BACKUP_demo_executor_PRE_STABLE_EXEC_20260917.py | 45.93 KB
+BACKUP_FILTRO_RESULTADO_HISTORICO_20260922_212515\mobile_server.py | 11.57 KB
+BACKUP_FILTRO_RESULTADO_HISTORICO_20260922_212515\ui_overlay_massa_v386_r11.py | 33.54 KB
+BACKUP_main_v384_r6_PRE_AUTO_EXPIRY_FIX_20260917.py | 33.44 KB
+BACKUP_main_v384_r6_PRE_STABLE_EXEC_20260917.py | 33.44 KB
+BACKUP_P0_DIDI_TIMING_20260923_225759\broker_results_r11.py | 23.38 KB
+BACKUP_P0_DIDI_TIMING_20260923_225759\demo_executor_v386_r11.py | 48.70 KB
+BACKUP_P0_DIDI_TIMING_20260923_225759\realtime_analyzer_v386_r11.py | 36.57 KB
+BACKUP_PRE_DASHBOARD_SEPARADO_20260922_2015\main_v386_r11.py | 40.20 KB
+BACKUP_PRE_DASHBOARD_SEPARADO_20260922_2015\mobile_server.py | 9.38 KB
+BACKUP_PRE_DASHBOARD_SEPARADO_20260922_2015\tests\browser_smoke_v386_r11.py | 5.80 KB
+BACKUP_PRE_DASHBOARD_SEPARADO_20260922_2015\tests\test_v386_r11_control_ui.py | 4.86 KB
+BACKUP_PRE_DASHBOARD_SEPARADO_20260922_2015\ui_overlay_massa_v386_r11.py | 32.98 KB
+BACKUP_PRE_RESTAURAR_OVERLAY_20260922_222304\ui_overlay_massa_v386_r11.py | 33.98 KB
+BACKUP_REMOVER_LOG_CLASSICO_20260922_212813\mobile_server.py | 11.73 KB
+BACKUP_REMOVER_LOG_CLASSICO_20260922_212813\ui_overlay_massa_v386_r11.py | 33.58 KB
+BACKUP_SEPARACAO_PENDENTES_HISTORICO_LOG_20260922_211746\mobile_server.py | 11.41 KB
+BACKUP_SEPARACAO_PENDENTES_HISTORICO_LOG_20260922_211746\ui_overlay_massa_v386_r11.py | 33.43 KB
+broker_day_r11.py | 595.00 B
+broker_history_r11.py | 12.96 KB
+BROKER_RESULTS_BACKUP_ANTES_SQLITE_LOCK_2026-09-17.py | 20.99 KB
+broker_results_r11.py | 25.18 KB
+broker_results_r6_BACKUP_PRE_P0_20260917.py | 21.43 KB
+browser.py | 1012.00 B
+bullex_controls_reader.py | 13.17 KB
+bullex_controls_reader_PATCH_STAGING.py | 8.70 KB
+bullex_live_capture 180926-2243.py | 19.67 KB
+bullex_live_capture 180926-2315.py | 19.37 KB
+bullex_live_capture 2009-1949.py | 22.97 KB
+bullex_live_capture.py | 25.21 KB
+bullex_live_capture_BACKUP_PRE_P0_20260917.py | 16.05 KB
+bullex_live_capture_R6_BEFORE_GRAPH_ASSET_FIX.py | 19.83 KB
+credential_store.py | 1.90 KB
+database (1).py | 344.00 B
+database.py | 3.32 KB
+demo_executor_v384_r6.py | 45.12 KB
+demo_executor_v384_r6_BACKUP_PRE_M1_SYNC_20260917.py | 45.53 KB
+demo_executor_v384_r6_GATE_FIX.py | 44.93 KB
+demo_executor_v386_r11.py | 52.25 KB
+drive_sync.py | 5.48 KB
+EXECUTOR_BACKUP_ANTES_LOCALIZADOR_PAR_2026-09-17.py | 44.52 KB
+final_setup_voice_patch.py | 1.54 KB
+inventario_r11.py | 8.22 KB
+launcher_ui.py | 7.47 KB
+login_helper.py | 1.92 KB
+MAIN_BACKUP_ANTES_RECUPERACAO_CHROME_2026-09-17.py | 32.79 KB
+main_v384_r6.py | 34.15 KB
+main_v384_r6.py bkp.py | 29.99 KB
+main_v384_r6_BACKUP_PRE_ASSET_LABELS.py | 31.85 KB
+main_v384_r6_BACKUP_PRE_RESTART_TIMEOUT_FIX.py | 31.20 KB
+main_v384_r6_PATCH_R6LABEL.py | 29.99 KB
+main_v384_r6_STABLE_EXEC_WORK.py | 33.44 KB
+main_v386_r11.py | 43.11 KB
+migrate_cycle_start_once.py | 1.27 KB
+mobile_server.py | 17.51 KB
+patch_pause_voice.py | 305.00 B
+patch_setup_voice.py | 3.08 KB
+patch_voice_target.py | 5.44 KB
+patch_voice_tone_simple.py | 958.00 B
+pause_control_r11.py | 1.40 KB
+r11_restart.py | 4.36 KB
+realtime_analyzer_v384_r1 (1).py | 28.48 KB
+realtime_analyzer_v384_r1.py | 28.07 KB
+realtime_analyzer_v384_r6.py | 31.35 KB
+realtime_analyzer_v386_r11.py | 39.95 KB
+score_engine_v384_r1.py | 6.12 KB
+score_engine_v384_r1_PATCH_READY.py | 6.90 KB
+score_engine_v384_r1_SETUPS_STAGING.py | 9.10 KB
+score_engine_v384_r6.py | 9.82 KB
+score_engine_v386_r11.py | 9.82 KB
+strategy_modules_v386_r11.py | 10.42 KB
+tests\browser_smoke_v386_r11.py | 5.59 KB
+tests\offline_validate_v385.py | 2.24 KB
+tests\test_broker_results_r6.py | 15.88 KB
+tests\test_didi_immediate_timing_r11.py | 7.62 KB
+tests\test_drive_sync_r11.py | 2.02 KB
+tests\test_history_r6.py | 4.13 KB
+tests\test_restart_r6.py | 2.92 KB
+tests\test_v385_features.py | 6.32 KB
+tests\test_v386_r11_control_ui.py | 7.91 KB
+tests\test_visual_clock_watchdog_r11.py | 2.78 KB
+tests\test_voice_announcer_r11.py | 1.68 KB
+UI_ATUAL_BACKUP_2026-09-17_1052.py | 30.14 KB
+UI_BACKUP_ANTES_CORRECAO_PAINEL_ATIVOS_2026-09-17.py | 46.01 KB
+UI_BACKUP_PRE_DASHBOARD_TELA_CHEIA_2026-09-17.py | 35.74 KB
+UI_BACKUP_PRE_DASHBOARD_TOTAL_FIX_2026-09-17.py | 46.94 KB
+UI_BACKUP_PRE_RESTART_COMMAND_FIX.py | 45.89 KB
+ui_overlay_massa_v385.py | 55.98 KB
+ui_overlay_massa_v386_r11.py | 37.69 KB
+ui_overlay_massa_v4 180926-2244.py | 54.35 KB
+ui_overlay_massa_v4 2009-1758.py | 51.37 KB
+ui_overlay_massa_v4.py | 53.17 KB
+ui_overlay_massa_v4_BACKUP_1132_PRE_M1_SYNC.py | 30.14 KB
+ui_overlay_massa_v4_RANKING_CICLO.py | 48.77 KB
+updater.py | 3.45 KB
+voice_announcer_r11.py | 4.77 KB
+voz_r11_atualizacao\voz_r11_pkg\broker_results_r11.py | 24.78 KB
+voz_r11_atualizacao\voz_r11_pkg\demo_executor_v386_r11.py | 58.12 KB
+voz_r11_atualizacao\voz_r11_pkg\main_v386_r11.py | 42.70 KB
+voz_r11_atualizacao\voz_r11_pkg\tests\test_voice_announcer_r11.py | 1.68 KB
+voz_r11_atualizacao\voz_r11_pkg\voice_announcer_r11.py | 3.77 KB
+
+================================================================================
+5. CONFIGURAÇÕES
+================================================================================
+
+asset_labels.json
+BACKUP_PRE_DASHBOARD_SEPARADO_20260922_2015\config.json
+BACKUP_PRE_DASHBOARD_SEPARADO_20260922_2015\config_v386_release.json
+config (1).json
+config.json
+config_v384.json
+config_v384_release.json
+config_v385_release.json
+config_v386_release.json
+resume_state_r11.json
+resume_state_r6.json
+tests\execution_baseline_r6.json
+voz_r11_atualizacao\voz_r11_pkg\config.json
+
+================================================================================
+6. DATABASES
+================================================================================
+
+BACKUP_DELETE_EXECUTED_20260925_130050\candles.db | 4.13 GB
+data\candles.db | 4.59 GB
+
+================================================================================
+7. SCRIPTS DE SISTEMA
+================================================================================
+
+bullex_controls_ocr.ps1
+INICIAR_RAPOSO_V3_85_R6.bat
+INICIAR_RAPOSO_V3_86_R11.bat
+merge_voice.ps1
+voz_r11_atualizacao\voz_r11_pkg\APLICAR_VOZ_R11.ps1
+
+================================================================================
+8. 30 MAIORES ARQUIVOS
+================================================================================
+
+     4.59 GB | data\candles.db
+     4.13 GB | BACKUP_DELETE_EXECUTED_20260925_130050\candles.db
+    10.93 MB | bullex_dev_runtime_local.log
+     7.88 MB | BACKUP_DELETE_EXECUTED_20260925_130050\candles.db-wal
+     7.87 MB | data\candles.db-wal
+   150.65 KB | LIVE_R11_PAUSED.png
+   129.08 KB | LIVE_R11_M1_PAUSED.png
+    87.57 KB | V386_R11_INTERFACE_SMOKE.png
+    71.20 KB | __pycache__\demo_executor_v386_r11.cpython-312.pyc
+    69.55 KB | __pycache__\ui_overlay_massa_v385.cpython-314.pyc
+    68.11 KB | __pycache__\demo_executor_v386_r11.cpython-314.pyc
+    66.37 KB | __pycache__\ui_overlay_massa_v4.cpython-314.pyc
+    65.95 KB | __pycache__\ui_overlay_massa_v4 180926-2244.cpython-314.pyc
+    63.91 KB | __pycache__\BACKUP_demo_executor_PRE_AUTO_EXPIRY_DASHBOARD_FIX_20260917.cpython-314.pyc
+    63.50 KB | __pycache__\ui_overlay_massa_v4 2009-1758.cpython-314.pyc
+    63.24 KB | __pycache__\BACKUP_demo_executor_PRE_BUTTON_LOCATOR_FIX_20260918.cpython-314.pyc
+    62.46 KB | __pycache__\BACKUP_demo_executor_PRE_RESTORE_LAST_WORKING_20260917.cpython-314.pyc
+    62.45 KB | __pycache__\BACKUP_demo_executor_PRE_ASSET_GATE_FIX_20260917.cpython-314.pyc
+    62.45 KB | __pycache__\BACKUP_demo_executor_PRE_STABLE_EXEC_20260917.cpython-314.pyc
+    61.42 KB | __pycache__\demo_executor_v384_r6.cpython-314.pyc
+    61.42 KB | __pycache__\BACKUP_demo_executor_PRE_BUTTON_RESILIENCE_20260918.cpython-314.pyc
+    61.41 KB | __pycache__\demo_executor_v384_r6_BACKUP_PRE_M1_SYNC_20260917.cpython-314.pyc
+    60.81 KB | __pycache__\demo_executor_v384_r6_GATE_FIX.cpython-314.pyc
+    60.67 KB | __pycache__\ui_overlay_massa_v4_RANKING_CICLO.cpython-314.pyc
+    60.47 KB | __pycache__\EXECUTOR_BACKUP_ANTES_LOCALIZADOR_PAR_2026-09-17.cpython-314.pyc
+    58.74 KB | demo_executor_v386_r11.py.bak_before_capture_clock_fix_20260926_044719
+    58.34 KB | __pycache__\UI_BACKUP_PRE_DASHBOARD_TOTAL_FIX_2026-09-17.cpython-314.pyc
+    58.12 KB | voz_r11_atualizacao\voz_r11_pkg\demo_executor_v386_r11.py
+    58.10 KB | demo_executor_v386_r11.py.bak_before_candle_absolute_clock_20260926_045337
+    57.23 KB | __pycache__\UI_BACKUP_ANTES_CORRECAO_PAINEL_ATIVOS_2026-09-17.cpython-314.pyc
+
+================================================================================
+9. POSSÍVEIS PASTAS DE DADOS
+================================================================================
+
+__pycache__\
+tests\__pycache__\
+
+================================================================================
+10. OBSERVAÇÕES
+================================================================================
+
+Este relatório foi criado sem mover, renomear, excluir ou modificar os arquivos existentes.
+O arquivo R11_INVENTARIO.txt foi criado pelo próprio inventário e deverá ser desconsiderado na futura análise da estrutura.

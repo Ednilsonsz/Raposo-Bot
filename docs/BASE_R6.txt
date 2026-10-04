@@ -1,0 +1,2 @@
+R6 criada a partir do snapshot ZIP da R5 salvo em 14/09/2026 21:51 UTC (~18:51 Brasilia), anterior as alteracoes posteriores.
+Objetivo: preservar a R5 que estava abrindo ordens e aplicar novas correcoes somente na R6.

@@ -1,0 +1,254 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Raposo R12 — Dashboard</title>
+<style>
+:root{color-scheme:dark;--bg:#050b13;--panel:#071526;--line:#21466b;--accent:#9cff25;--muted:#91a5bb}
+*{box-sizing:border-box}
+body{margin:0;padding:20px;background:radial-gradient(circle at 50% -20%,#18351d,#050b13 45%);color:#dce8f5;font:13px Segoe UI,Arial,sans-serif}
+header.top{display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #315a31;padding:4px 0 16px;gap:16px}
+h1{margin:0;color:var(--accent);font-size:24px}
+h2{font-size:15px;margin:0 0 5px}
+small,.muted{color:var(--muted)}
+button,input{font:inherit;color:#dce8f5;background:#0b1725;border:1px solid #315a31;border-radius:5px;padding:7px 10px}
+button{cursor:pointer;font-weight:700}
+button:hover,button.active{color:var(--accent);border-color:var(--accent)}
+.view{display:none}.view.active{display:block}
+.viewTabs{display:flex;gap:6px;flex-wrap:wrap}.viewTabs button{min-width:145px}
+.kpis{display:grid;grid-template-columns:repeat(6,minmax(110px,1fr));gap:9px;margin:16px 0}
+.card,section{background:rgba(7,21,38,.94);border:1px solid var(--line);border-radius:8px;padding:13px}
+.card span{display:block;color:var(--muted);font-size:10px}
+.card b{display:block;color:var(--accent);font-size:22px;margin-top:5px}
+.toolbar{display:flex;align-items:center;justify-content:space-between;gap:10px;margin:14px 0 10px}
+.tablewrap{width:100%;overflow:auto;max-height:calc(100vh - 300px);border:1px solid #17304a;border-radius:6px;margin-top:10px}
+table{width:100%;border-collapse:collapse;min-width:1500px}
+th,td{padding:7px 8px;border-bottom:1px solid #17304a;text-align:left;white-space:nowrap;font-size:11px}
+th{position:sticky;top:0;background:#071526;color:#9db1c8;z-index:1}
+.empty{text-align:center;color:var(--muted);padding:25px}
+.rangeButtons{display:flex;flex-wrap:wrap;gap:5px;margin-bottom:9px}
+.rangeButtons button{font-size:11px;padding:6px 8px}
+.custom{display:none;gap:8px;align-items:center;margin-bottom:10px}
+.custom.show{display:flex}
+.total-grids{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin:7px 0}
+.total-block{background:linear-gradient(135deg,rgba(54,4,91,.78),rgba(14,6,35,.92));border:1px solid #fff;border-radius:7px;box-shadow:0 0 5px #d58cff,0 0 12px rgba(190,75,255,.45),inset 0 0 10px rgba(170,60,255,.16);padding:6px;min-width:0}
+.total-block h3{margin:0 0 5px;color:#fff;text-shadow:0 0 5px #e8b5ff;font-size:11px;letter-spacing:.7px}
+.total-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(110px,1fr));gap:5px}
+.signal-analysis{margin:10px 0;border-color:#41714c}
+.signal-analysis h2{color:var(--accent)}
+.signal-grids{display:grid;grid-template-columns:minmax(0,1fr);gap:8px;margin-top:9px}
+.signal-grid{min-width:0;background:#081622;border:1px solid #244b43;border-radius:7px;padding:9px;overflow:auto}
+.signal-grid h3{margin:0 0 7px;color:#c5f5ce;font-size:12px}
+.signal-candle-stack{min-width:0}
+.signal-candle-stack>h3{margin:0 0 7px;color:#c5f5ce;font-size:12px}
+.signal-candle-blocks{display:grid;grid-template-columns:1fr;gap:8px}
+.signal-candle-block{border-color:#547c35;border-left:5px solid var(--accent);background:linear-gradient(100deg,rgba(156,255,37,.10),#081622 42%);box-shadow:inset 0 0 12px rgba(156,255,37,.08)}
+.signal-candle-title{display:flex;align-items:center;justify-content:space-between;gap:10px}
+.signal-candle-title .candle-index{display:inline-block;padding:3px 8px;border:1px solid var(--accent);border-radius:4px;background:#14230c;color:var(--accent);font-size:12px;letter-spacing:.5px}
+.signal-candle-title .candle-context{color:var(--muted);font-size:10px;font-weight:400}
+.signal-grid table{min-width:100%;width:100%}
+.signal-grid th,.signal-grid td{font-size:10px;padding:5px 6px}
+.signal-grid td.signal-win{color:#75f28a;font-weight:700}.signal-grid td.signal-loss{color:#ff7777;font-weight:700}.signal-grid td.fin-positive{color:#75f28a;font-weight:700}.signal-grid td.fin-negative{color:#ff7777;font-weight:700}
+.signal-note{font-size:11px;color:var(--muted)}
+.subtotal{background:rgba(20,4,42,.82);border:1px solid #d9a2ff;border-radius:4px;padding:4px 6px;color:#f3ddff;font-size:10px}
+.subtotal b{color:#fff;text-shadow:0 0 6px #d878ff}
+.subtotal.positive b{color:#75f28a!important}.subtotal.negative b{color:#ff7777!important}
+.subtotal span.positive{color:#75f28a!important}.subtotal span.negative{color:#ff7777!important}
+.total-block .summary-table{min-width:0;width:100%;border-collapse:collapse;table-layout:fixed}
+.total-block .summary-table th,.total-block .summary-table td{padding:3px 4px;border-bottom:1px solid rgba(217,162,255,.28);font-size:9px;line-height:1.25;text-align:left;vertical-align:top;white-space:normal;overflow-wrap:anywhere}
+.total-block .summary-table th{position:static;background:rgba(20,4,42,.55);color:#f3ddff;font-size:9px}
+.total-block .summary-table .sum-win{color:#75f28a;font-weight:700}
+.total-block .summary-table .sum-loss{color:#ff7777;font-weight:700}
+.total-block .summary-table .sum-positive{color:#75f28a;font-weight:700}
+.total-block .summary-table .sum-negative{color:#ff7777;font-weight:700}
+.total-block .summary-table .sum-money{display:block;font-weight:700}
+.historyGrid tr.win td{background:rgba(30,110,55,.10)}.historyGrid tr.loss td{background:rgba(130,35,35,.10)}
+.historyGrid td.result-win,.historyGrid td.pnl-positive{color:#75f28a;font-weight:700}
+.historyGrid td.result-loss,.historyGrid td.pnl-negative{color:#ff7777;font-weight:700}
+.updated{color:var(--muted);font-size:11px}
+@media(max-width:1100px){.total-grids{grid-template-columns:repeat(2,minmax(0,1fr))}.kpis{grid-template-columns:repeat(3,minmax(100px,1fr))}}
+@media(max-width:800px){.total-grids{grid-template-columns:1fr}}
+@media(max-width:1100px){.signal-grids{grid-template-columns:1fr}}
+@media(max-width:600px){body{padding:11px}.kpis{grid-template-columns:repeat(2,minmax(100px,1fr))}h1{font-size:19px}.signal-grid table{min-width:540px}}
+
+.historyGrid table{width:100%;min-width:0;table-layout:fixed}
+.historyGrid th,.historyGrid td{overflow:hidden;text-overflow:ellipsis;min-width:0;padding:6px 3px;font-size:10px;white-space:nowrap;vertical-align:middle}
+.historyGrid .sortHead{padding:4px 0;font-size:10px;min-width:0;white-space:nowrap;border-color:transparent;background:transparent}
+.historyGrid [data-field=id]{width:2.818%;}
+.historyGrid [data-field=position]{width:6.924%;}
+.historyGrid [data-field=time]{width:11.514%;}
+.historyGrid [data-field=asset]{width:9.098%;}
+.historyGrid [data-field=setup]{width:11.433%;}
+.historyGrid [data-field=direction_original]{width:4.670%;}
+.historyGrid [data-field=direction_executed]{width:4.670%;}
+.historyGrid [data-field=candle_flow_inverted]{width:3.945%;}
+.historyGrid [data-field=stake]{width:5.072%;}
+.historyGrid [data-field=candle_exec]{width:3.623%;}
+.historyGrid [data-field=revision]{width:5.636%;}
+.historyGrid [data-field=status]{width:6.119%;}
+.historyGrid [data-field=result]{width:3.784%;}
+.historyGrid [data-field=pnl]{width:6.039%;}
+.historyGrid [data-field=requested_at]{width:5.556%;}
+.historyGrid [data-field=executed_at]{width:5.556%;}
+.historyGrid [data-field=expiry]{width:3.543%;}
+.historyGrid [data-field=expiry]{overflow:hidden;text-overflow:ellipsis}
+.historyGrid [data-field=direction_original],.historyGrid [data-field=direction_executed],.historyGrid [data-field=candle_flow_inverted],.historyGrid [data-field=candle_exec],.historyGrid [data-field=result]{text-align:center}
+.historyFilter{display:flex;align-items:center;gap:4px;margin-left:auto}
+.historyFilter select{background:#071526;color:#dce8f5;border:1px solid #315a31;border-radius:5px;font:11px Segoe UI,Arial;padding:6px 4px;max-width:145px}
+.historyFilter button{padding:6px!important}
+</style>
+</head>
+<body>
+<header class="top">
+  <div><h1>RAPOSO · DASHBOARD</h1><small>Somente leitura · banco local · atualização em tempo real</small><div class="updated" id="state">Conectando...</div></div>
+  <div class="viewTabs"><button id="latestButton" type="button">ULT.MOVIMENTAÇÕES</button><button id="signalsButton" type="button">ANÁLISE DE SINAIS</button><button id="historyButton" class="active" type="button">HISTÓRICO</button></div>
+</header>
+<main id="latestView" class="view">
+  <div class="toolbar"><div><h2>ÚLTIMAS MOVIMENTAÇÕES</h2><small>Ordens aceitas pela Bullex, aguardando resultado</small></div></div>
+  <section><div class="tablewrap historyGrid"><table><thead><tr id="pendingHead"></tr></thead><tbody id="pendingRows"><tr><td class="empty">Aguardando dados...</td></tr></tbody></table></div></section>
+</main>
+<main id="signalsView" class="view">
+  <section class="signal-analysis">
+    <h2>ANÁLISE PRÉ-OPERAÇÃO · SINAIS DE HOJE</h2>
+    <div class="signal-note">Sinais, acertos, erros e WR são teóricos pelo candle após o sinal. “Ops. reais (W/L)” e ROI usam somente ordens executadas e confirmadas no período.</div>
+    <div class="signal-grids">
+      <div class="signal-grid"><h3>SETUP DE HOJE</h3><table><thead><tr><th>Setup</th><th>Sinais</th><th>Acertos</th><th>Erros</th><th>Empates</th><th>Pend.</th><th>WR</th><th>Score méd.</th><th>Ops. reais (W/L)</th><th>ROI fin. real</th></tr></thead><tbody id="signalSetupRows"></tbody></table></div>
+      <div class="signal-candle-stack"><h3>SETUP POR CANDLE M1 (CICLO 1–5)</h3><div id="signalCandleBlocks" class="signal-candle-blocks"></div></div>
+      <div class="signal-grid"><h3>RESULTADO POR TURNO</h3><div class="signal-note">Horário local: Turno 1 (00–06h), 2 (06–12h), 3 (12–18h), 4 (18–24h).</div><table><thead><tr><th>Turno</th><th>Operações</th><th>WIN</th><th>LOSS</th><th>WR</th><th>ROI fin. real</th></tr></thead><tbody id="signalShiftRows"></tbody></table></div>
+    </div>
+  </section>
+</main>
+<main id="historyView" class="view active">
+  <div class="kpis">
+    <div class="card"><span>OPERAÇÕES FECHADAS</span><b id="operations">0</b></div>
+    <div class="card"><span>WIN</span><b id="wins">0</b></div>
+    <div class="card"><span>LOSS</span><b id="losses">0</b></div>
+    <div class="card"><span>PENDENTES</span><b id="pending">0</b></div>
+    <div class="card"><span>WIN RATE</span><b id="rate">0%</b></div>
+    <div class="card"><span>RESULTADO</span><b id="pl">0.00</b></div>
+  </div>
+  <div class="toolbar"><div><h2>HISTÓRICO DE OPERAÇÕES</h2><small>Somente operações executadas e fechadas</small></div></div>
+  <div class="total-grids">
+    <section class="total-block"><h3>SETUPS</h3><div id="setupTotals" class="total-grid"></div></section>
+    <section class="total-block"><h3>CANDLES</h3><div id="candleTotals" class="total-grid"></div></section>
+    <section class="total-block"><h3>TURNOS</h3><div id="shiftTotals" class="total-grid"></div></section>
+  </div>
+  <section>
+    <div class="rangeButtons" id="ranges"></div>
+    <div class="custom" id="custom"><label>De <input id="start" type="date"></label><label>Até <input id="end" type="date"></label><button id="apply" type="button">APLICAR</button></div>
+    <div class="tablewrap historyGrid"><table><thead><tr id="historyHead"></tr></thead><tbody id="historyRows"><tr><td class="empty">Selecione um período.</td></tr></tbody></table></div>
+  </section>
+</main>
+<script>
+const pin=new URLSearchParams(location.search).get('pin')||'';
+const columns=[['ID','id'],['Broker ID','position'],['Horário','time'],['Ativo','asset'],['Setup','setup'],['Dir.Orig.','direction_original','Direção original do sinal'],['Dir.Exec.','direction_executed','Direção executada'],['CF inv.','candle_flow_inverted','CANDLE_FLOW invertido: 1 = sim, 0 = não'],['Stake','stake'],['Cndl.','candle_exec','Candle da entrada'],['Versão','revision','Versão do robô'],['Status','status'],['Res.','result','Resultado da operação'],['P/L','pnl'],['Solicit.','requested_at','Horário da solicitação'],['Execução','executed_at','Horário da execução'],['Expir.','expiry','Duração registrada pela corretora']];
+const ranges=[['today','Hoje'],['yesterday','Ontem'],['7d','7 dias'],['14d','14 dias'],['28d','28 dias'],['30d','30 dias'],['this_week','Esta semana'],['last_week','Semana passada'],['this_month','Este mês'],['last_month','Mês passado'],['this_quarter','Este trimestre'],['max','Máximo'],['custom','Personalizado']];
+let currentRange='today',sortState={};
+const esc=v=>String(v??'—').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const cleanRevision=v=>{const text=String(v??'—');const version=text.match(/V\d+(?:\.\d+)*/i),release=text.match(/\bR\d+\b/i);return version&&release?version[0]+' - '+release[0]:text};
+const cellValue=(c,x)=>c[1]==='revision'?cleanRevision(x.revision):['requested_at','executed_at'].includes(c[1])?String(x[c[1]]??'—').match(/\d{2}:\d{2}:\d{2}/)?.[0]||'—':['time'].includes(c[1])?shortDate(x[c[1]]):x[c[1]];
+const shortDate=v=>String(v??'—').replace(/(\d{2}\/\d{2}\/)\d{2}(\d{2})(?=\s|$)/g,'$1$2');
+function renderRows(list){
+  const body=document.getElementById('historyRows'),state=sortState;
+  window.__historyRows=[...(list||[])];
+  updateFilterValues();
+  const data=window.__historyRows.filter(x=>!filterValue.value||String(x[filterField.value]??'—')===filterValue.value);
+  if(state){data.sort((a,b)=>{const av=String(a[state.col]??''),bv=String(b[state.col]??''),an=Number(av),bn=Number(bv);const cmp=Number.isFinite(an)&&Number.isFinite(bn)?an-bn:av.localeCompare(bv,'pt-BR',{numeric:true,sensitivity:'base'});return cmp*state.dir})}
+  body.innerHTML='';
+  if(!data.length){body.innerHTML='<tr><td colspan="17" class="empty">Nenhuma operação no período.</td></tr>';return}
+  data.forEach(x=>{const tr=document.createElement('tr'),result=String(x.result||'').toUpperCase(),pnl=Number(x.pnl_minor);if(result.includes('WIN'))tr.className='win';else if(result.includes('LOSS'))tr.className='loss';tr.innerHTML=columns.map(c=>{let cls='';if(c[1]==='result'&&result.includes('WIN'))cls='result-win';else if(c[1]==='result'&&result.includes('LOSS'))cls='result-loss';else if(c[1]==='pnl'&&Number.isFinite(pnl)&&pnl>0)cls='pnl-positive';else if(c[1]==='pnl'&&Number.isFinite(pnl)&&pnl<0)cls='pnl-negative';return `<td data-field="${c[1]}" title="${esc(['time','requested_at','executed_at'].includes(c[1])?shortDate(x[c[1]]):x[c[1]])}" class="${cls}">${esc(cellValue(c,x))}</td>`}).join('');body.appendChild(tr)});
+}
+const pendingColumns=[['ID','id'],['Broker ID','position'],['Horário','time'],['Ativo','asset'],['Setup','setup'],['Dir.Orig.','direction_original','Direção original do sinal'],['Dir.Exec.','direction_executed','Direção executada'],['Stake','stake'],['Cndl.','candle_exec','Candle da entrada'],['Versão','revision','Versão do robô'],['Status','status'],['Expir.','expiry','Duração registrada pela corretora']];
+function renderPendingRows(list){
+  const head=document.getElementById('pendingHead'),body=document.getElementById('pendingRows');
+  head.innerHTML=pendingColumns.map(c=>`<th data-field="${c[1]}" title="${esc(c[2]||c[0])}">${c[0]}</th>`).join('');body.innerHTML='';
+  const data=list||[];
+  if(!data.length){body.innerHTML='<tr><td colspan="12" class="empty">Nenhuma movimentação pendente.</td></tr>';return}
+  data.forEach(x=>{const tr=document.createElement('tr');tr.innerHTML=pendingColumns.map(c=>`<td data-field="${c[1]}" title="${esc(['time','requested_at','executed_at'].includes(c[1])?shortDate(x[c[1]]):x[c[1]])}">${esc(cellValue(c,x))}</td>`).join('');body.appendChild(tr)});
+}
+function showDashboardView(view){
+  for(const name of ['latest','history','signals']){
+    document.getElementById(name+'View').classList.toggle('active',view===name);
+    document.getElementById(name+'Button').classList.toggle('active',view===name);
+  }
+  refresh();
+}
+function renderTotals(data,group,id){
+  const items=(data||[]).filter(x=>x.group===group).sort((a,b)=>String(a.key||'').localeCompare(String(b.key||''),'pt-BR',{numeric:true,sensitivity:'base'}));
+  const first=group==='Turno'?'TURNO':group==='Candle'?'CANDLE':'SETUP';
+  const byKey=new Map(items.map(x=>[String(x.key),x]));
+  const source=group==='Turno'?Array.from({length:8},(_,i)=>'Turno '+(i+1)).map(key=>byKey.get(key)||{key,wins:0,losses:0,pl:'',roi:null}):items;
+  const rows=source.map(x=>{const wins=Number(x.wins||0),losses=Number(x.losses||0),operations=wins+losses,roi=x.roi===null||x.roi===undefined?null:Number(x.roi),pl=String(x.pl||''),moneyValue=Number((pl.match(/[+-]?[0-9]+(?:\.[0-9]+)?/)||[])[0]),resultClass=roi!==null?(roi>0?'sum-positive':roi<0?'sum-negative':''):Number.isFinite(moneyValue)?(moneyValue>0?'sum-positive':moneyValue<0?'sum-negative':''):'';const result=roi===null?'N/D':`${roi.toFixed(2)}%${pl?`<span class="sum-money">${esc(pl)}</span>`:''}`;return `<tr><td>${esc(String(x.key||'').toUpperCase())}</td><td>${operations}</td><td class="sum-win">${wins}</td><td class="sum-loss">${losses}</td><td class="${resultClass}">${result}</td></tr>`}).join('');
+  document.getElementById(id).innerHTML=`<table class="summary-table"><colgroup><col style="width:27%"><col style="width:12%"><col style="width:12%"><col style="width:12%"><col style="width:37%"></colgroup><thead><tr><th>${first}</th><th>OP.</th><th>WIN</th><th>LOSS</th><th>ROI</th></tr></thead><tbody>${rows||'<tr><td colspan="5" class="muted">Sem operações no período.</td></tr>'}</tbody></table>`;
+}
+function renderSignalRows(id,items,dimensions){
+  const body=document.getElementById(id),rows=items||[];
+  body.innerHTML='';
+  const realIndex=dimensions.length+(dimensions.length===1?7:6),roiIndex=realIndex+1;
+  if(!rows.length){body.innerHTML=`<tr><td colspan="${roiIndex+1}" class="empty">Nenhum sinal registrado hoje.</td></tr>`;return}
+  rows.forEach(x=>{const tr=document.createElement('tr'),realOps=Number(x.real_operations||0),realWins=Number(x.real_wins||0),realLosses=Number(x.real_losses||0),realPl=Number(x.realized_pl_minor||0),values=[...dimensions.map(key=>key==='candle'?`${x[key]}/5`:x[key]),x.signals,x.wins,x.losses,x.draws,x.pending,`${(Number(x.wins||0)+Number(x.losses||0)?100*Number(x.wins||0)/(Number(x.wins||0)+Number(x.losses||0)):0).toFixed(1)}%`,...(dimensions.length===1? [Number(x.avg_score||0).toFixed(1)]:[]),`${realOps} (${realWins}/${realLosses})`,x.roi===null||x.roi===undefined?'N/D':`${Number(x.roi).toFixed(2)}%`],winsIndex=dimensions.length+1,lossesIndex=dimensions.length+2;tr.innerHTML=values.map((v,i)=>{let cls='';if(i===winsIndex)cls='signal-win';else if(i===lossesIndex)cls='signal-loss';else if(i===realIndex&&realOps)cls=realPl>0?'fin-positive':realPl<0?'fin-negative':'';else if(i===roiIndex&&x.roi!==null&&x.roi!==undefined)cls=Number(x.roi)>0?'fin-positive':Number(x.roi)<0?'fin-negative':'';return `<td class="${cls}">${esc(v)}</td>`}).join('');body.appendChild(tr)});
+}
+function renderCandleBlocks(items){
+  const root=document.getElementById('signalCandleBlocks'),rows=items||[];
+  root.innerHTML='';
+  for(let candle=1;candle<=5;candle++){
+    const block=document.createElement('div');block.className='signal-grid signal-candle-block';
+    const grouped=rows.filter(x=>Number(x.candle)===candle).sort((a,b)=>String(a.setup||'').localeCompare(String(b.setup||''),'pt-BR',{sensitivity:'base'}));
+    const bodyRows=grouped.map(x=>{
+      const wins=Number(x.wins||0),losses=Number(x.losses||0),decided=wins+losses;
+      const realOps=Number(x.real_operations||0),realWins=Number(x.real_wins||0),realLosses=Number(x.real_losses||0),realPl=Number(x.realized_pl_minor||0),values=[x.setup,x.signals,wins,losses,x.draws,x.pending,`${(decided?100*wins/decided:0).toFixed(1)}%`,`${realOps} (${realWins}/${realLosses})`,x.roi===null||x.roi===undefined?'N/D':`${Number(x.roi).toFixed(2)}%`];
+      return `<tr>${values.map((value,index)=>{let cls='';if(index===2)cls='signal-win';else if(index===3)cls='signal-loss';else if(index===7&&realOps)cls=realPl>0?'fin-positive':realPl<0?'fin-negative':'';else if(index===8&&x.roi!==null&&x.roi!==undefined)cls=Number(x.roi)>0?'fin-positive':Number(x.roi)<0?'fin-negative':'';return `<td class="${cls}">${esc(value)}</td>`}).join('')}</tr>`;
+    }).join('');
+    block.innerHTML=`<h3 class="signal-candle-title"><span class="candle-index">CANDLE ${candle}/5</span><span class="candle-context">COMPARAÇÃO DOS SETUPS</span></h3><table><thead><tr><th>Setup</th><th>Sinais</th><th>Acertos</th><th>Erros</th><th>Empates</th><th>Pend.</th><th>WR</th><th>Ops. reais (W/L)</th><th>ROI fin. real</th></tr></thead><tbody>${bodyRows||'<tr><td colspan="9" class="empty">Nenhum sinal neste candle.</td></tr>'}</tbody></table>`;
+    root.appendChild(block);
+  }
+}
+function renderShiftRows(items,financialItems){
+  const body=document.getElementById('signalShiftRows'),rows=(financialItems||[]).filter(x=>x.group==='Turno').map(x=>{const wins=Number(x.wins||0),losses=Number(x.losses||0),operations=wins+losses;return {shift:String(x.key||''),wins,losses,operations,rate:operations?100*wins/operations:0,net:String(x.pl||'N/D')}}).filter(x=>x.shift&&x.operations>0).sort((a,b)=>a.shift.localeCompare(b.shift,'pt-BR',{numeric:true}));
+  body.innerHTML='';
+  if(!rows.length){body.innerHTML='<tr><td colspan="6" class="empty">Sem operações reais confirmadas por turno no período.</td></tr>';return}
+  rows.forEach(x=>{const tr=document.createElement('tr'),netMatch=x.net.match(/[+-]?[0-9]+(?:\.[0-9]+)?/),netValue=netMatch?Number(netMatch[0]):NaN,netClass=Number.isFinite(netValue)?(netValue>0?'fin-positive':netValue<0?'fin-negative':''):'';const values=[x.shift,x.operations,x.wins,x.losses,`${x.rate.toFixed(1)}%`,x.net];tr.innerHTML=values.map((v,i)=>{const cls=i===2?'signal-win':i===3?'signal-loss':i===5?netClass:'';return `<td class="${cls}">${esc(v)}</td>`}).join('');body.appendChild(tr)});
+}
+async function refresh(){
+  try{
+    const q=new URLSearchParams({range:currentRange,pin});
+    if(currentRange==='custom'){q.set('start',document.getElementById('start').value);q.set('end',document.getElementById('end').value)}
+    const r=await fetch('/api/dashboard?'+q.toString(),{cache:'no-store'}),j=await r.json();if(!j.ok)throw Error(j.error||'API');const d=j.data||{};
+    for(const [id,val] of [['operations',d.operations||0],['wins',d.wins||0],['losses',d.losses||0],['pending',d.pending_filtered||0],['rate',(d.win_rate||0)+'%'],['pl',d.pl||'0.00']])document.getElementById(id).textContent=val;
+    document.getElementById('state').textContent=(d.paused?'PAUSADO':(d.feed_m1_frozen?'FEED M1 CONGELADO':(d.armed?'OPERANDO':'ANÁLISE ATIVA · ORDENS BLOQUEADAS')))+' · Atualizado '+new Date().toLocaleTimeString('pt-BR');
+    renderSignalRows('signalSetupRows',d.signal_analytics?.setups||[],['setup']);
+    renderCandleBlocks(d.signal_analytics?.candles||[]);
+    renderShiftRows([],d.subtotals||[]);
+    renderTotals(d.subtotals,'Setup','setupTotals');renderTotals(d.subtotals,'Candle','candleTotals');renderTotals(d.subtotals,'Turno','shiftTotals');renderRows(d.history||[]);renderPendingRows(d.pending_history||[]);
+  }catch(e){document.getElementById('state').textContent='Servidor indisponível'}
+}
+const head=document.getElementById('historyHead');
+head.innerHTML=columns.map((c,i)=>`<th data-field="${c[1]}" title="${esc(c[2]||c[0])}"><button class="sortHead" data-col="${i}" type="button">${c[0]} ↕</button></th>`).join('');
+head.querySelectorAll('.sortHead').forEach(b=>b.onclick=()=>{const col=columns[Number(b.dataset.col)][1];sortState={col,dir:sortState.col===col&&sortState.dir===1?-1:1};renderRows(window.__historyRows||[])});
+const rb=document.getElementById('ranges');
+const filterField=document.createElement('select'),filterValue=document.createElement('select');
+filterField.setAttribute('aria-label','Filtrar por');filterValue.setAttribute('aria-label','Valor do filtro');
+filterField.innerHTML='<option value="asset">Ativo</option><option value="setup">Setup</option><option value="result">Resultado</option><option value="expiry">Expir.</option>';
+function updateFilterValues(){
+  const previous=filterValue.value;
+  const values=[...new Set((window.__historyRows||[]).map(x=>String(x[filterField.value]??'—')))].sort((a,b)=>a.localeCompare(b,'pt-BR'));
+  filterValue.innerHTML='<option value="">Todos</option>'+values.map(v=>`<option value="${esc(v)}">${esc(v)}</option>`).join('');
+  if(values.includes(previous))filterValue.value=previous;
+}
+filterField.onchange=()=>{filterValue.value='';renderRows(window.__historyRows||[])};
+filterValue.onchange=()=>renderRows(window.__historyRows||[]);
+
+document.getElementById('latestButton').onclick=()=>showDashboardView('latest');document.getElementById('historyButton').onclick=()=>showDashboardView('history');document.getElementById('signalsButton').onclick=()=>showDashboardView('signals');
+ranges.forEach(([key,label])=>{const b=document.createElement('button');b.textContent=label;b.dataset.range=key;b.onclick=()=>{currentRange=key;rb.querySelectorAll('button[data-range]').forEach(x=>x.classList.toggle('active',x===b));document.getElementById('custom').classList.toggle('show',key==='custom');if(key!=='custom')refresh()};rb.appendChild(b)});
+const filterBox=document.createElement('div');filterBox.className='historyFilter';
+const clearFilter=document.createElement('button');clearFilter.type='button';clearFilter.textContent='×';clearFilter.title='Limpar filtro';clearFilter.setAttribute('aria-label','Limpar filtro');clearFilter.onclick=()=>{filterValue.value='';renderRows(window.__historyRows||[])};
+filterBox.append(filterField,filterValue,clearFilter);rb.appendChild(filterBox);updateFilterValues();
+rb.firstChild.classList.add('active');document.getElementById('apply').onclick=refresh;
+document.getElementById('start').onchange=()=>{if(currentRange==='custom')refresh()};document.getElementById('end').onchange=()=>{if(currentRange==='custom')refresh()};
+refresh();setInterval(refresh,1500);
+</script>
+</body>
+</html>
+
+

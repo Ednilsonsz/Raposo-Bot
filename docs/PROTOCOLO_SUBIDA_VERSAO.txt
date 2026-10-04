@@ -1,0 +1,52 @@
+RAPOSO BOT — PROTOCOLO OBRIGATORIO PARA SUBIDA DE NOVA VERSAO
+
+Antes de declarar qualquer versao pronta/atual:
+
+[ ] 1. EMPACOTAMENTO: todos os imports do main existem na pasta da versao.
+[ ] 2. SINTAXE: executar py_compile em todos os .py alterados e no main.
+[ ] 3. STARTUP: BAT abre a versao correta; captura, analisador e executor iniciam sem traceback.
+[ ] 4. BOTOES: ACIMA e ABAIXO validados; expiracao confirmada em 1 minuto.
+[ ] 5. FEED: WebSocket ativo e feed fresco; troca de candle M1 confirmada. Confirmar que broker_at avanca na cadencia normal observada.
+[ ] 6. ATIVO: interface deve mostrar o ativo real selecionado, nunca apenas CARREGANDO/VALIDADO-RESTAURADO.
+[ ] 7. SCORE->MOTOR: todo setup com score >= minimo deve gerar no log MOTOR][ENTRADA ou MOTOR][BLOQUEADO/IGNORADO com motivo. E proibido sumir silenciosamente.
+[ ] 8. SIGNAL_PENDING: nenhum sinal aprovado pode ficar indefinidamente pendente. Deve virar EXECUTED, BLOCKED, ERROR, SKIPPED ou ser explicitamente descartado.
+[ ] 9. DIDI AGULHADA: gatilho imediato. Detectou + score minimo + filtros validos => executar no momento. Nao esperar :58, outra vela ou confirmacao posterior. Se perdeu o momento, descartar; nunca reaproveitar.
+[ ] 10. DUPLO_PULLBACK: direcao definida no setup; score aprovado segue para a janela propria de execucao M1. Nao recalcular direcao depois.
+[ ] 11. TIMING M1: validar passagem motor -> executor e clique; feed em saltos nao pode fazer o sinal desaparecer.
+[ ] 12. DUPLICIDADE/RESTORE: colisao UNIQUE de decision nao pode abandonar sinal silenciosamente. Reusar pending sem EXECUTED; nunca duplicar ordem ja EXECUTED.
+[ ] 13. EXECUCAO: clique real deve registrar DEMO][EXECUTADA e status EXECUTED.
+[ ] 14. RESULTADO: uma ordem automatica EXECUTED deve resolver WIN/LOSS e atualizar painel/resultado do dia.
+[ ] 15. PAUSA: pausado nao entra; ao RETOMAR, nao executar sinal vencido da pausa.
+[ ] 16. LOG: testar ao menos um caminho aprovado e um bloqueado; ambos precisam deixar motivo rastreavel.
+[ ] 17. REGRESSAO: preservar protecoes contra gale/duplicidade, stake, expiracao, troca de ativo e sessao.
+[ ] 18. VERSAO: VERSION, nome da pasta, BAT, PATCH/README e CURRENT devem apontar para a mesma versao.
+[ ] 19. PACOTE: comparar lista de arquivos com a versao anterior e impedir modulo obrigatorio ausente.
+[ ] 20. SO DEPOIS dos itens acima, marcar a versao como atual e orientar reinicio.
+
+WATCHDOG OBRIGATORIO DO FEED M1 (R11):
+
+- Atua somente no gate de novas entradas (feed_m1_ready). Nao altera setups, sinais, score, Adaptive/KNN, ROI ou timing.
+- Aprende no minimo 5 intervalos validos de broker_at e usa a mediana de uma janela de 30 amostras.
+- Tolerancia operacional: cadencia observada x 6, com piso de 8 s e teto de 30 s.
+- Outliers acima do maior valor entre 5 s e 3 x a mediana observada nao entram no aprendizado; antes da primeira referencia, o teto e 30 s. Assim uma cadencia normal mais lenta pode ser aprendida sem deixar um congelamento inflar a tolerancia.
+- Ao exceder a tolerancia: mostrar FEED M1 CONGELADO, desarmar somente novas entradas e manter capture.poll/reconciliacao ativos.
+- Recuperacao automatica somente depois de 3 avancos consecutivos de broker_at dentro da tolerancia. Um pacote isolado nao libera entrada.
+- Log de congelamento deve conter inicio estimado, deteccao, ativo, broker_at, candle, cadencia, tolerancia e reconciliacao=ATIVA.
+- Log de recuperacao deve conter inicio, horario recuperado, duracao e quantidade de avancos consistentes.
+- Se houver PAUSA do usuario, a recuperacao do feed nao rearma o executor ate o usuario retomar.
+- Teste obrigatorio: python -m unittest tests.test_feed_watchdog_m1_r11
+- Backup desta alteracao: L:\Bullex_Robo\backup\PRE_M1_FEED_WATCHDOG_20260928_195912 (estrutura app/, app/mobile_app/, config/ e docs/ preservada).
+
+Arquivos do watchdog R11:
+app\feed_watchdog_m1_r11.py
+app\main_v386_r11.py
+app\demo_executor_v386_r11.py
+app\ui_overlay_massa_v386_r11.py
+app\mobile_server.py
+app\mobile_app\dashboard.html
+app\mobile_app\log.html
+tests\test_feed_watchdog_m1_r11.py
+
+Regra de aceite critica:
+SETUP APROVADO -> MOTOR -> EXECUTOR -> EXECUTED/BLOCKED (com motivo) -> WIN/LOSS.
+Nenhuma etapa pode terminar silenciosamente em SIGNAL_PENDING.

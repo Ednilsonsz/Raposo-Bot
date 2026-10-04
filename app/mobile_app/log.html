@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Raposo R12 — Log</title>
+<style>
+:root{color-scheme:dark;--bg:#050b13;--panel:#071526;--line:#21466b;--accent:#9cff25;--muted:#91a5bb}
+*{box-sizing:border-box}
+body{margin:0;padding:20px;background:radial-gradient(circle at 50% -20%,#18351d,#050b13 45%);color:#dce8f5;font:13px Segoe UI,Arial,sans-serif}
+header{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:4px 0 16px;border-bottom:1px solid #315a31}
+h1{margin:0;color:var(--accent);font-size:24px}small{color:var(--muted)}
+nav{display:flex;align-items:center;gap:8px}button{font:inherit;font-weight:700;color:#dce8f5;background:#0b1725;border:1px solid #315a31;border-radius:5px;padding:7px 10px;cursor:pointer}button:hover{color:var(--accent);border-color:var(--accent)}button:disabled{opacity:.55;cursor:wait}#toggle{color:var(--accent);border-color:var(--accent)}
+#state{margin:12px 0;color:var(--muted)}
+pre{height:calc(100vh - 115px);margin:0;padding:14px;overflow:auto;white-space:pre-wrap;overflow-wrap:anywhere;border:1px solid rgba(156,255,37,.35);border-radius:7px;background:#040911;color:#bcd0e6;font:12px/1.55 Consolas,monospace}
+@media(max-width:650px){body{padding:12px}header{align-items:flex-start;flex-direction:column}pre{height:calc(100vh - 145px)}}
+</style>
+</head>
+<body>
+<header><div><h1>LOG DO RAPOSO</h1><small>Runtime em tempo real · atualização automática · Pause/Break congela somente o texto do log</small></div><nav><span id="state">Conectando…</span><button id="toggle" type="button" title="Pausar ou retomar a atualização do log (Pause/Break)">PAUSAR</button><button id="bottom" type="button">IR AO FIM</button><button id="refresh" type="button">ATUALIZAR</button></nav></header>
+<pre id="log" aria-live="polite"></pre>
+<script>
+const pin=new URLSearchParams(location.search).get('pin')||'';
+const box=document.getElementById('log'),state=document.getElementById('state');
+const toggle=document.getElementById('toggle');
+let stickBottom=true,logPaused=false,refreshSequence=0;
+box.addEventListener('scroll',()=>{stickBottom=box.scrollHeight-box.scrollTop-box.clientHeight<45});
+async function refresh(){
+  if(logPaused)return;
+  const sequence=++refreshSequence;
+  try{
+    const response=await fetch('/api/log?'+new URLSearchParams({pin}),{cache:'no-store'});
+    const result=await response.json();
+    if(logPaused||sequence!==refreshSequence)return;
+    if(!result.ok)throw Error(result.error||'API');
+    box.textContent=(result.data.logs||[]).join('\n');
+    if(stickBottom)box.scrollTop=box.scrollHeight;
+    state.textContent='LOG ATIVO · atualizado '+new Date().toLocaleTimeString('pt-BR');
+  }catch(error){if(!logPaused&&sequence===refreshSequence)state.textContent='Servidor indisponível'}
+}
+function togglePause(){
+  logPaused=!logPaused;
+  ++refreshSequence;
+  toggle.textContent=logPaused?'RETOMAR':'PAUSAR';
+  state.textContent=logPaused?'LOG PAUSADO':'LOG ATIVO';
+  if(!logPaused)refresh();
+}
+document.getElementById('bottom').onclick=()=>{box.scrollTop=box.scrollHeight;stickBottom=true};
+document.getElementById('refresh').onclick=refresh;
+toggle.onclick=togglePause;
+window.addEventListener('keydown',event=>{
+  if((event.code==='Pause'||event.key==='Pause'||event.key==='Break')&&!event.repeat){event.preventDefault();togglePause()}
+});
+refresh();setInterval(refresh,1500);
+</script>
+</body>
+</html>
